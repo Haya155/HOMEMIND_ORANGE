@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Requests | HOMEmind</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123B5D'/%3E%3Cpath d='M16 7 6.5 15H9v9h14v-9h2.5z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-2.6-1.8-3.9-3-3.9-4.5 0-1.1.8-1.9 1.8-1.9.8 0 1.6.4 2.1 1.1.5-.7 1.3-1.1 2.1-1.1 1 0 1.8.8 1.8 1.9 0 1.5-1.3 2.7-3.9 4.5z' fill='%232A9D8F'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/workspace.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <a class="brand" href="home.html" aria-label="HOMEmind home">
+                <span class="brand-mark"><i class="bi bi-house-heart-fill" aria-hidden="true"></i></span>
+                <span class="brand-name">HOME<span>mind</span></span>
+            </a>
+
+            <div class="sidebar-label">WORKSPACE</div>
+            <nav class="sidebar-nav" aria-label="Company navigation">
+                <a class="nav-link" href="company-dashboard.html">
+                    <i class="bi bi-grid-1x2" aria-hidden="true"></i><span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="company-locations.html">
+                    <i class="bi bi-buildings" aria-hidden="true"></i><span>Locations</span>
+                </a>
+                <a class="nav-link" href="company-equipment.html">
+                    <i class="bi bi-cpu" aria-hidden="true"></i><span>Equipment</span>
+                    <span class="nav-count">128</span>
+                </a>
+                <a class="nav-link" href="company-technicians.html">
+                    <i class="bi bi-people" aria-hidden="true"></i><span>Technicians</span>
+                </a>
+
+                <div class="sidebar-label sidebar-label-spaced">OPERATIONS</div>
+                <a class="nav-link active" href="company-requests.html" aria-current="page">
+                    <i class="bi bi-inbox" aria-hidden="true"></i><span>Service Requests</span>
+                    <span class="nav-count">7</span>
+                </a>
+                <a class="nav-link" href="company-maintenance.html">
+                    <i class="bi bi-journal-check" aria-hidden="true"></i><span>Maintenance Log</span>
+                </a>
+                <a class="nav-link" href="company-warranty.html">
+                    <i class="bi bi-shield-check" aria-hidden="true"></i><span>Warranty & Schedule</span>
+                </a>
+
+                <div class="sidebar-label sidebar-label-spaced">INSIGHTS</div>
+                <a class="nav-link" href="company-reports.html">
+                    <i class="bi bi-bar-chart-line" aria-hidden="true"></i><span>Reports & Analytics</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-help">
+                <div class="help-icon"><i class="bi bi-headset" aria-hidden="true"></i></div>
+                <h3>Need help?</h3>
+                <p>Contact HOMEmind support for help managing your sites and equipment.</p>
+                <a href="home.html#contact">Contact Support <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+
+            <a class="logout-link" href="home.html">
+                <i class="bi bi-box-arrow-left" aria-hidden="true"></i><span>Back to Home</span>
+            </a>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-title">
+                    <p class="eyebrow">COMPANY WORKSPACE</p>
+                    <h1>Service Requests</h1>
+                </div>
+                <div class="topbar-actions">
+                    <a class="icon-button" href="company-warranty.html" aria-label="Notifications">
+                        <i class="bi bi-bell" aria-hidden="true"></i><span class="notification-dot"></span>
+                    </a>
+                    <a class="profile-chip" href="company-dashboard.html">
+                        <span class="avatar">A</span>
+                        <span class="profile-copy"><strong>Amman Towers Group</strong><small>Company Admin</small></span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="page-stack">
+                <section class="stats-grid">
+                    <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-blue"><i class="bi bi-inbox" aria-hidden="true"></i></span><span class="stat-caption">Open</span></div><p class="stat-value" data-count="7">7</p><p class="stat-label">Open requests</p></article>
+                    <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-orange"><i class="bi bi-plus-circle" aria-hidden="true"></i></span><span class="stat-caption">New</span></div><p class="stat-value" data-count="2">2</p><p class="stat-label">Waiting for a technician</p></article>
+                    <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-teal"><i class="bi bi-tools" aria-hidden="true"></i></span><span class="stat-caption">In progress</span></div><p class="stat-value" data-count="3">3</p><p class="stat-label">Being handled now</p></article>
+                    <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-purple"><i class="bi bi-box-seam" aria-hidden="true"></i></span><span class="stat-caption">Parts</span></div><p class="stat-value" data-count="2">2</p><p class="stat-label">Waiting for spare parts</p></article>
+                </section>
+                <article class="panel">
+                    <div class="panel-header"><div><p class="panel-eyebrow">ALL SITES</p><h2>Open requests</h2></div></div>
+                    <div class="table-wrap"><table class="data-table">
+                            <thead><tr><th>Device</th><th>Issue</th><th>Site</th><th>Technician</th><th>Status</th><th>Opened</th></tr></thead>
+                            <tbody>
+                            <tr><td><strong>Chiller #2</strong></td><td>No cooling</td><td>Al-Shifa Medical Wing</td><td>Hala Mansour</td><td><span class="badge badge-progress">In progress</span></td><td>8 Oct</td></tr>
+                            <tr><td><strong>Medical Fridge</strong></td><td>Temperature alarm</td><td>Al-Shifa Medical Wing</td><td>Yousef Al-Rawashdeh</td><td><span class="badge badge-progress">In progress</span></td><td>9 Oct</td></tr>
+                            <tr><td><strong>Backup Generator</strong></td><td>Scheduled test</td><td>Al-Shifa Medical Wing</td><td>Not assigned yet</td><td><span class="badge badge-new">New</span></td><td>10 Oct</td></tr>
+                            <tr><td><strong>Water Pump P-3</strong></td><td>Low pressure</td><td>Sweifieh Residential</td><td>Tareq Daoud</td><td><span class="badge badge-progress">In progress</span></td><td>7 Oct</td></tr>
+                            <tr><td><strong>Water Heater Boiler</strong></td><td>Leaking</td><td>Sweifieh Residential</td><td>Tareq Daoud</td><td><span class="badge badge-pending">Waiting for parts</span></td><td>5 Oct</td></tr>
+                            <tr><td><strong>Elevator Motor</strong></td><td>Strange noise</td><td>Abdali Office Tower</td><td>Not assigned yet</td><td><span class="badge badge-new">New</span></td><td>10 Oct</td></tr>
+                            <tr><td><strong>Forklift Charger</strong></td><td>Not charging</td><td>Sahab Warehouse</td><td>Yousef Al-Rawashdeh</td><td><span class="badge badge-pending">Waiting for parts</span></td><td>3 Oct</td></tr>
+                            </tbody>
+                    </table></div>
+                </article>
+            </div>
+
+            <footer class="dashboard-footer">
+                <span>© 2026 HOMEmind. Smart Maintenance. Smarter Living.</span>
+                <span><i class="bi bi-shield-check" aria-hidden="true"></i> Company workspace</span>
+            </footer>
+        </main>
+    </div>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

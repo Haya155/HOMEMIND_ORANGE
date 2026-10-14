@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications | HOMEmind</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123B5D'/%3E%3Cpath d='M16 7 6.5 15H9v9h14v-9h2.5z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-2.6-1.8-3.9-3-3.9-4.5 0-1.1.8-1.9 1.8-1.9.8 0 1.6.4 2.1 1.1.5-.7 1.3-1.1 2.1-1.1 1 0 1.8.8 1.8 1.9 0 1.5-1.3 2.7-3.9 4.5z' fill='%232A9D8F'/%3E%3C/svg%3E">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/notifications.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <a href="dashboard.html" class="sidebar-logo">
+
+            <span class="logo-icon">
+                <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+            </span>
+
+            <span class="logo-text">
+                HOME<span>mind</span>
+            </span>
+
+        </a>
+
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section">
+
+                <p class="nav-title">MAIN</p>
+
+                <a href="dashboard.html" class="sidebar-link">
+                    <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="my-devices.html" class="sidebar-link">
+                    <i class="bi bi-cpu-fill" aria-hidden="true"></i>
+                    <span>My Devices</span>
+                </a>
+
+                <a href="services-history.html" class="sidebar-link">
+                    <i class="bi bi-tools" aria-hidden="true"></i>
+                    <span>Services & History</span>
+                </a>
+                <a href="my-technicians.html" class="sidebar-link">
+                    <i class="bi bi-person-badge" aria-hidden="true"></i>
+                    <span>My Technicians</span>
+                </a>
+
+                <a href="ai-assistant.html" class="sidebar-link">
+                    <i class="bi bi-stars" aria-hidden="true"></i>
+                    <span>AI Assistant</span>
+                </a>
+
+                <a href="live-dispatch.html" class="sidebar-link">
+                    <i class="bi bi-broadcast-pin" aria-hidden="true"></i>
+                    <span>Live Service Dispatch</span>
+                </a>
+
+                <a href="notifications.html" class="sidebar-link active">
+                    <i class="bi bi-bell-fill" aria-hidden="true"></i>
+                    <span>Notifications</span>
+                    <span class="notification-badge">3</span>
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <p class="nav-title">MANAGEMENT</p>
+
+                <a href="management/maintenance-history.html" class="sidebar-link">
+                    <i class="bi bi-clock-history" aria-hidden="true"></i>
+                    <span>Maintenance History</span>
+                </a>
+
+                <a href="management/warranty.html" class="sidebar-link">
+                    <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    <span>Warranty Center</span>
+                </a>
+
+                <a href="management/repair-replace.html" class="sidebar-link">
+                    <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                    <span>Repair vs Replace</span>
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <p class="nav-title">ACCOUNT</p>
+
+                <a href="profile.html" class="sidebar-link">
+                    <i class="bi bi-person-fill" aria-hidden="true"></i>
+                    <span>Profile</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <div class="help-icon">
+                    <i class="bi bi-headset" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <strong>Need help?</strong>
+                    <p>We're here for you.</p>
+                </div>
+
+            </div>
+
+
+            <a href="home.html" class="logout-link">
+                <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- ================= PAGE HEADER ================= -->
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="page-label">
+                    UPDATES & ALERTS
+                </p>
+
+                <h1>Notifications</h1>
+
+                <p class="page-description">
+                    Stay updated with your devices, maintenance reminders,
+                    service requests, warranties, and important account activity.
+                </p>
+
+            </div>
+
+
+            <button class="mark-read-button">
+                <i class="bi bi-check2-all" aria-hidden="true"></i>
+                Mark all as read
+            </button>
+
+        </div>
+
+
+        <!-- ================= NOTIFICATION SUMMARY ================= -->
+
+        <section class="notification-summary">
+
+            <div class="summary-item">
+
+                <div class="summary-icon unread-icon">
+                    <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Unread</span>
+                    <strong data-count="3">3</strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <div class="summary-icon service-icon">
+                    <i class="bi bi-tools" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Service Updates</span>
+                    <strong data-count="2">2</strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <div class="summary-icon warranty-icon">
+                    <i class="bi bi-shield-exclamation" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Warranty Alerts</span>
+                    <strong data-count="1">1</strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <div class="summary-icon reminder-icon">
+                    <i class="bi bi-calendar-event" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Reminders</span>
+                    <strong data-count="2">2</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOTIFICATIONS ================= -->
+
+        <section class="notifications-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        RECENT ACTIVITY
+                    </p>
+
+                    <h2>All Notifications</h2>
+
+                </div>
+
+                <span class="notification-count">
+                    7 notifications
+                </span>
+
+            </div>
+
+
+            <div class="notifications-list">
+
+
+                <!-- ================= NOTIFICATION 1 ================= -->
+
+                <article class="notification-card unread">
+
+                    <div class="notification-icon service-notification">
+                        <i class="bi bi-person-check-fill" aria-hidden="true"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-title-row">
+
+                            <h3>Technician Assigned</h3>
+
+                            <span class="unread-dot"></span>
+
+                        </div>
+
+                        <p>
+                            Ahmad Khalil has been assigned to your
+                            Air Conditioner repair request.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="bi bi-clock" aria-hidden="true"></i>
+                                15 minutes ago
+                            </span>
+
+                            <span>
+                                <i class="bi bi-tools" aria-hidden="true"></i>
+                                Service Request
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="live-dispatch.html" class="notification-action">
+                        View Service
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- ================= NOTIFICATION 2 ================= -->
+
+                <article class="notification-card unread">
+
+                    <div class="notification-icon warranty-notification">
+                        <i class="bi bi-shield-exclamation" aria-hidden="true"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-title-row">
+
+                            <h3>Warranty Expiring Soon</h3>
+
+                            <span class="unread-dot"></span>
+
+                        </div>
+
+                        <p>
+                            Your LG Refrigerator warranty will expire
+                            in 23 days. Check your warranty coverage.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="bi bi-clock" aria-hidden="true"></i>
+                                2 hours ago
+                            </span>
+
+                            <span>
+                                <i class="bi bi-shield-check" aria-hidden="true"></i>
+                                Warranty
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="management/warranty.html" class="notification-action">
+                        View Warranty
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- ================= NOTIFICATION 3 ================= -->
+
+                <article class="notification-card unread">
+
+                    <div class="notification-icon maintenance-notification">
+                        <i class="bi bi-calendar-check-fill" aria-hidden="true"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-title-row">
+
+                            <h3>Maintenance Reminder</h3>
+
+                            <span class="unread-dot"></span>
+
+                        </div>
+
+                        <p>
+                            Your Washing Machine is due for maintenance.
+                            Schedule a service to keep it running efficiently.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="bi bi-clock" aria-hidden="true"></i>
+                                Yesterday
+                            </span>
+
+                            <span>
+                                <i class="bi bi-calendar-check" aria-hidden="true"></i>
+                                Maintenance
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="live-dispatch.html" class="notification-action">
+                        Schedule Service
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- ================= NOTIFICATION 4 ================= -->
+
+                <article class="notification-card">
+
+                    <div class="notification-icon completed-notification">
+                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-title-row">
+
+                            <h3>Service Completed</h3>
+
+                        </div>
+
+                        <p>
+                            Your Water Heater repair was successfully completed.
+                            The service cost was 40 JOD.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="bi bi-clock" aria-hidden="true"></i>
+                                Sep 28, 2026
+                            </span>
+
+                            <span>
+                                <i class="bi bi-receipt" aria-hidden="true"></i>
+                                40 JOD
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="management/maintenance-history.html" class="notification-action">
+                        View History
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- ================= NOTIFICATION 5 ================= -->
+
+                <article class="notification-card">
+
+                    <div class="notification-icon service-notification">
+                        <i class="bi bi-broadcast-pin" aria-hidden="true"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-title-row">
+
+                            <h3>Service Request Received</h3>
+
+                        </div>
+
+                        <p>
+                            Your refrigerator repair request has been received
+                            and HOMEmind is currently finding a suitable technician.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="bi bi-clock" aria-hidden="true"></i>
+                                Oct 6, 2026
+                            </span>
+
+                            <span>
+                                <i class="bi bi-person-workspace" aria-hidden="true"></i>
+                                Technician Matching
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="services-history.html" class="notification-action">
+                        View Request
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- ================= NOTIFICATION 6 ================= -->
+
+                <article class="notification-card">
+
+                    <div class="notification-icon reminder-notification">
+                        <i class="bi bi-calendar-event-fill" aria-hidden="true"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-title-row">
+
+                            <h3>Upcoming Maintenance</h3>
+
+                        </div>
+
+                        <p>
+                            Your Air Conditioner is scheduled for its next
+                            recommended maintenance on December 28, 2026.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="bi bi-clock" aria-hidden="true"></i>
+                                Oct 4, 2026
+                            </span>
+
+                            <span>
+                                <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                Upcoming
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="management/maintenance-history.html" class="notification-action">
+                        View Schedule
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- ================= NOTIFICATION 7 ================= -->
+
+                <article class="notification-card">
+
+                    <div class="notification-icon device-notification">
+                        <i class="bi bi-cpu-fill" aria-hidden="true"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-title-row">
+
+                            <h3>Device Added Successfully</h3>
+
+                        </div>
+
+                        <p>
+                            Your Ariston Water Heater has been added to
+                            your HOMEmind device list.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="bi bi-clock" aria-hidden="true"></i>
+                                Oct 3, 2026
+                            </span>
+
+                            <span>
+                                <i class="bi bi-cpu" aria-hidden="true"></i>
+                                My Devices
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="my-devices.html" class="notification-action">
+                        View Devices
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOTIFICATION INFO ================= -->
+
+        <section class="notification-info">
+
+            <div class="info-icon">
+                <i class="bi bi-bell" aria-hidden="true"></i>
+            </div>
+
+            <div>
+
+                <h3>Stay informed</h3>
+
+                <p>
+                    HOMEmind will notify you about important maintenance dates,
+                    warranty expiration, service updates, and technician activity.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

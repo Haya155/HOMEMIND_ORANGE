@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services & History | HOMEmind</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123B5D'/%3E%3Cpath d='M16 7 6.5 15H9v9h14v-9h2.5z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-2.6-1.8-3.9-3-3.9-4.5 0-1.1.8-1.9 1.8-1.9.8 0 1.6.4 2.1 1.1.5-.7 1.3-1.1 2.1-1.1 1 0 1.8.8 1.8 1.9 0 1.5-1.3 2.7-3.9 4.5z' fill='%232A9D8F'/%3E%3C/svg%3E">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/services-history.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <a href="dashboard.html" class="sidebar-logo">
+            <span class="logo-icon">
+                <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+            </span>
+
+            <span class="logo-text">
+                HOME<span>mind</span>
+            </span>
+        </a>
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section">
+
+                <p class="nav-title">MAIN</p>
+
+                <a href="dashboard.html" class="sidebar-link">
+                    <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="my-devices.html" class="sidebar-link">
+                    <i class="bi bi-cpu-fill" aria-hidden="true"></i>
+                    <span>My Devices</span>
+                </a>
+
+                <a href="services-history.html" class="sidebar-link active">
+                    <i class="bi bi-tools" aria-hidden="true"></i>
+                    <span>Services & History</span>
+                </a>
+                <a href="my-technicians.html" class="sidebar-link">
+                    <i class="bi bi-person-badge" aria-hidden="true"></i>
+                    <span>My Technicians</span>
+                </a>
+
+                <a href="ai-assistant.html" class="sidebar-link">
+                    <i class="bi bi-stars" aria-hidden="true"></i>
+                    <span>AI Assistant</span>
+                </a>
+
+                <a href="live-dispatch.html" class="sidebar-link">
+                    <i class="bi bi-broadcast-pin" aria-hidden="true"></i>
+                    <span>Live Service Dispatch</span>
+                </a>
+
+                <a href="notifications.html" class="sidebar-link">
+                    <i class="bi bi-bell-fill" aria-hidden="true"></i>
+                    <span>Notifications</span>
+                    <span class="notification-badge">3</span>
+                </a>
+
+            </div>
+
+            <div class="nav-section">
+
+                <p class="nav-title">MANAGEMENT</p>
+
+                <a href="management/maintenance-history.html" class="sidebar-link">
+                    <i class="bi bi-clock-history" aria-hidden="true"></i>
+                    <span>Maintenance History</span>
+                </a>
+
+                <a href="management/warranty.html" class="sidebar-link">
+                    <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    <span>Warranty Center</span>
+                </a>
+
+                <a href="management/repair-replace.html" class="sidebar-link">
+                    <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                    <span>Repair vs Replace</span>
+                </a>
+
+            </div>
+
+            <div class="nav-section">
+
+                <p class="nav-title">ACCOUNT</p>
+
+                <a href="profile.html" class="sidebar-link">
+                    <i class="bi bi-person-fill" aria-hidden="true"></i>
+                    <span>Profile</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <div class="help-icon">
+                    <i class="bi bi-headset" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <strong>Need help?</strong>
+                    <p>We're here for you.</p>
+                </div>
+
+            </div>
+
+            <a href="home.html" class="logout-link">
+                <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="page-label">
+                    SERVICE MANAGEMENT
+                </p>
+
+                <h1>Services & History</h1>
+
+                <p class="page-description">
+                    Track your service requests, technician visits, and completed
+                    equipment services in one place.
+                </p>
+
+            </div>
+
+            <a href="live-dispatch.html" class="primary-button">
+                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                Request Service
+            </a>
+
+        </div>
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon active-icon">
+                    <i class="bi bi-broadcast-pin" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Active Services</span>
+                    <strong data-count="2">2</strong>
+                    <small>Currently in progress</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon pending-icon">
+                    <i class="bi bi-hourglass-split" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Pending Requests</span>
+                    <strong data-count="1">1</strong>
+                    <small>Waiting for technician</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon completed-icon">
+                    <i class="bi bi-check-circle" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Completed</span>
+                    <strong data-count="12">12</strong>
+                    <small>Services completed</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon cost-icon">
+                    <i class="bi bi-wallet2" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Total Spent</span>
+                    <strong>185 <small>JOD</small></strong>
+                    <small>All completed services</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACTIVE SERVICES ================= -->
+
+        <section class="section-block">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">
+                        CURRENT SERVICES
+                    </p>
+
+                    <h2>Active & Pending Services</h2>
+                </div>
+
+                <span class="count-badge">
+                    3 Requests
+                </span>
+
+            </div>
+
+
+            <div class="service-list">
+
+                <!-- SERVICE 1 -->
+
+                <article class="service-card">
+
+                    <div class="service-main">
+
+                        <div class="device-icon">
+                            <i class="bi bi-snow" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="service-info">
+
+                            <div class="service-title-row">
+
+                                <h3>Air Conditioner</h3>
+
+                                <span class="status active">
+                                    Technician Assigned
+                                </span>
+
+                            </div>
+
+                            <p class="device-name">
+                                Samsung · Living Room
+                            </p>
+
+                            <div class="service-meta">
+
+                                <span>
+                                    <i class="bi bi-tools" aria-hidden="true"></i>
+                                    Repair
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    Oct 6, 2026
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-person" aria-hidden="true"></i>
+                                    Ahmad Khalil
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="service-side">
+
+                        <div class="price">
+                            35 <span>JOD</span>
+                        </div>
+
+                        <a href="live-dispatch.html" class="details-link">
+                            Track Service
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SERVICE 2 -->
+
+                <article class="service-card">
+
+                    <div class="service-main">
+
+                        <div class="device-icon maintenance-icon">
+                            <i class="bi bi-droplet" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="service-info">
+
+                            <div class="service-title-row">
+
+                                <h3>Water Heater</h3>
+
+                                <span class="status progress">
+                                    In Progress
+                                </span>
+
+                            </div>
+
+                            <p class="device-name">
+                                Ariston · Bathroom
+                            </p>
+
+                            <div class="service-meta">
+
+                                <span>
+                                    <i class="bi bi-tools" aria-hidden="true"></i>
+                                    Maintenance
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    Oct 5, 2026
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-person" aria-hidden="true"></i>
+                                    Omar Saleh
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="service-side">
+
+                        <div class="price">
+                            25 <span>JOD</span>
+                        </div>
+
+                        <a href="live-dispatch.html" class="details-link">
+                            View Service
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SERVICE 3 -->
+
+                <article class="service-card">
+
+                    <div class="service-main">
+
+                        <div class="device-icon pending-device">
+                            <i class="bi bi-box-seam" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="service-info">
+
+                            <div class="service-title-row">
+
+                                <h3>Refrigerator</h3>
+
+                                <span class="status pending">
+                                    Finding Technician
+                                </span>
+
+                            </div>
+
+                            <p class="device-name">
+                                LG · Kitchen
+                            </p>
+
+                            <div class="service-meta">
+
+                                <span>
+                                    <i class="bi bi-tools" aria-hidden="true"></i>
+                                    Repair
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    Oct 6, 2026
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-person" aria-hidden="true"></i>
+                                    Not Assigned
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="service-side">
+
+                        <div class="price">
+                            —
+                        </div>
+
+                        <a href="live-dispatch.html" class="details-link">
+                            View Request
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SERVICE HISTORY ================= -->
+
+        <section class="section-block history-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">
+                        SERVICE HISTORY
+                    </p>
+
+                    <h2>Recent Completed Services</h2>
+                </div>
+
+                <div class="view-all-group">
+                <a href="rate-technician.html" class="view-all">
+                    Rate a Technician
+                    <i class="bi bi-star" aria-hidden="true"></i>
+                </a>
+                <a href="management/maintenance-history.html" class="view-all">
+                    View Full History
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            </div>
+
+
+            <div class="history-card">
+
+                <div class="history-table">
+
+                    <div class="table-row table-header">
+
+                        <span>Device</span>
+                        <span>Service</span>
+                        <span>Technician</span>
+                        <span>Date</span>
+                        <span>Cost</span>
+                        <span>Status</span>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div class="table-device">
+
+                            <span class="mini-icon">
+                                <i class="bi bi-droplet" aria-hidden="true"></i>
+                            </span>
+
+                            <div>
+                                <strong>Water Heater</strong>
+                                <small>Ariston</small>
+                            </div>
+
+                        </div>
+
+                        <span>Repair</span>
+
+                        <span>Omar Saleh</span>
+
+                        <span>Sep 28, 2026</span>
+
+                        <strong>40 JOD</strong>
+
+                        <span class="completed-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div class="table-device">
+
+                            <span class="mini-icon">
+                                <i class="bi bi-snow" aria-hidden="true"></i>
+                            </span>
+
+                            <div>
+                                <strong>Air Conditioner</strong>
+                                <small>Samsung</small>
+                            </div>
+
+                        </div>
+
+                        <span>Maintenance</span>
+
+                        <span>Ahmad Khalil</span>
+
+                        <span>Sep 12, 2026</span>
+
+                        <strong>25 JOD</strong>
+
+                        <span class="completed-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div class="table-device">
+
+                            <span class="mini-icon">
+                                <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                            </span>
+
+                            <div>
+                                <strong>Washing Machine</strong>
+                                <small>Samsung</small>
+                            </div>
+
+                        </div>
+
+                        <span>Repair</span>
+
+                        <span>Yousef Nasser</span>
+
+                        <span>Aug 21, 2026</span>
+
+                        <strong>55 JOD</strong>
+
+                        <span class="completed-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="service-cta">
+
+            <div>
+
+                <span>
+                    NEED PROFESSIONAL HELP?
+                </span>
+
+                <h2>
+                    Something wrong with your equipment?
+                </h2>
+
+                <p>
+                    Request a qualified technician and let HOMEmind handle the matching.
+                </p>
+
+            </div>
+
+            <a href="live-dispatch.html" class="cta-button">
+                Request a Technician
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+
+        </section>
+
+    </main>
+
+</div>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

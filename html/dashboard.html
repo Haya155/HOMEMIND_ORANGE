@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | HOMEmind</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123B5D'/%3E%3Cpath d='M16 7 6.5 15H9v9h14v-9h2.5z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-2.6-1.8-3.9-3-3.9-4.5 0-1.1.8-1.9 1.8-1.9.8 0 1.6.4 2.1 1.1.5-.7 1.3-1.1 2.1-1.1 1 0 1.8.8 1.8 1.9 0 1.5-1.3 2.7-3.9 4.5z' fill='%232A9D8F'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+
+                <a href="dashboard.html" class="home-logo">
+
+                    <span class="logo-icon">
+                        <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        HOME<span>mind</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN</p>
+
+                <a href="dashboard.html" class="sidebar-link active" aria-current="page">
+                    <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="my-devices.html" class="sidebar-link">
+                    <i class="bi bi-cpu" aria-hidden="true"></i>
+                    <span>My Devices</span>
+                </a>
+
+                <a href="services-history.html" class="sidebar-link">
+                    <i class="bi bi-tools" aria-hidden="true"></i>
+                    <span>Services & History</span>
+                </a>
+                <a href="my-technicians.html" class="sidebar-link">
+                    <i class="bi bi-person-badge" aria-hidden="true"></i>
+                    <span>My Technicians</span>
+                </a>
+
+                <a href="ai-assistant.html" class="sidebar-link">
+                    <i class="bi bi-stars" aria-hidden="true"></i>
+                    <span>AI Assistant</span>
+                </a>
+
+                <a href="live-dispatch.html" class="sidebar-link">
+                    <i class="bi bi-broadcast" aria-hidden="true"></i>
+                    <span>Live Service Dispatch</span>
+                </a>
+
+                <p class="nav-title">MANAGEMENT</p>
+
+                <a href="notifications.html" class="sidebar-link">
+                    <i class="bi bi-bell" aria-hidden="true"></i>
+                    <span>Notifications</span>
+                    <span class="notification-badge">3</span>
+                </a>
+
+                <a href="management/maintenance-history.html" class="sidebar-link">
+                    <i class="bi bi-clock-history" aria-hidden="true"></i>
+                    <span>Maintenance History</span>
+                </a>
+
+                <a href="management/warranty.html" class="sidebar-link">
+                    <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    <span>Warranty Center</span>
+                </a>
+
+                <a href="management/repair-replace.html" class="sidebar-link">
+                    <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+                    <span>Repair vs Replace</span>
+                </a>
+
+                <p class="nav-title">ACCOUNT</p>
+
+                <a href="profile.html" class="sidebar-link">
+                    <i class="bi bi-person" aria-hidden="true"></i>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-help">
+                    <i class="bi bi-headset" aria-hidden="true"></i>
+
+                    <div>
+                        <strong>Need Help?</strong>
+                        <span>We're here for you.</span>
+                    </div>
+                </div>
+
+                <a href="home.html" class="logout-link">
+                    <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- ================= MAIN AREA ================= -->
+
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-header">
+
+                <div>
+                    <h1>
+                        Good morning, <span>Haya</span>
+                    </h1>
+
+                    <p class="welcome-text">
+                        Here's what's happening with your equipment.
+                    </p>
+                </div>
+
+                <div class="header-actions">
+
+                    <a href="add-device.html" class="primary-action">
+                        <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                        <span>Add Device</span>
+                    </a>
+
+                    <button class="notification-button" aria-label="Notifications">
+                        <i class="bi bi-bell" aria-hidden="true"></i>
+                        <span></span>
+                    </button>
+
+                    <div class="user-profile">
+
+                        <div class="user-avatar">
+                            HA
+                        </div>
+
+                        <div class="user-info">
+                            <strong>Haya Ahmad</strong>
+                            <span>Home Owner</span>
+                        </div>
+
+                        <i class="bi bi-chevron-down" aria-hidden="true"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- ================= STATISTICS ================= -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="bi bi-cpu" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>MY DEVICES</span>
+                        <strong data-count="8">8</strong>
+                        <small>Registered devices</small>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon teal">
+                        <i class="bi bi-tools" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>MAINTENANCE</span>
+                        <strong data-count="3">3</strong>
+                        <small>This month</small>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        <i class="bi bi-broadcast" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>ACTIVE SERVICES</span>
+                        <strong data-count="2">2</strong>
+                        <small>Currently in progress</small>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>WARRANTIES</span>
+                        <strong data-count="1">1</strong>
+                        <small>Expiring soon</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= DASHBOARD GRID ================= -->
+
+            <section class="dashboard-grid">
+
+                <!-- Recent Services -->
+                <div class="dashboard-card recent-services">
+
+                    <div class="card-header">
+
+                        <h2>Recent Services</h2>
+
+                        <a href="services-history.html" class="view-link">
+                            View All
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="service-list">
+
+                        <div class="service-item">
+
+                            <div class="service-icon">
+                                <i class="bi bi-snow" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="service-details">
+                                <strong>Air Conditioner Repair</strong>
+                                <span>Living Room AC · Oct 4, 2026</span>
+                            </div>
+
+                            <span class="status completed">
+                                Completed
+                            </span>
+
+                        </div>
+
+                        <div class="service-item">
+
+                            <div class="service-icon">
+                                <i class="bi bi-droplet" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="service-details">
+                                <strong>Water Heater Maintenance</strong>
+                                <span>Water Heater · Oct 2, 2026</span>
+                            </div>
+
+                            <!-- was "status progress": clashed with Bootstrap's .progress -->
+                            <span class="status in-progress">
+                                In Progress
+                            </span>
+
+                        </div>
+
+                        <div class="service-item">
+
+                            <div class="service-icon">
+                                <i class="bi bi-box-seam" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="service-details">
+                                <strong>Washing Machine Check</strong>
+                                <span>Washing Machine · Sep 28, 2026</span>
+                            </div>
+
+                            <span class="status completed">
+                                Completed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Warranty -->
+                <div class="dashboard-card warranty-card">
+
+                    <div class="card-header">
+
+                        <h2>Expiring Soon</h2>
+
+                        <a href="management/warranty.html" class="view-link">
+                            View All
+                        </a>
+
+                    </div>
+
+                    <div class="warranty-device">
+
+                        <div class="device-icon">
+                            <i class="bi bi-thermometer-snow" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="device-details">
+
+                            <strong>LG Refrigerator</strong>
+
+                            <span>
+                                Warranty expires in
+                                <b>23 days</b>
+                            </span>
+
+                        </div>
+
+                        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+
+                    </div>
+
+                    <div class="warranty-progress">
+
+                        <div class="progress-info">
+                            <span>Warranty period</span>
+                            <strong>92%</strong>
+                        </div>
+
+                        <div
+                            class="progress"
+                            role="progressbar"
+                            aria-label="Warranty period used"
+                            aria-valuenow="92"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        >
+                            <div class="progress-bar" style="width: 92%;"></div>
+                        </div>
+
+                    </div>
+
+                    <a href="management/warranty.html" class="warranty-button">
+                        View Warranty Details
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- ================= DEVICES ================= -->
+
+            <section class="dashboard-card devices-card">
+
+                <div class="card-header">
+
+                    <h2>Your Devices</h2>
+
+                    <a href="my-devices.html" class="view-link">
+                        View All
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+                <div class="devices-grid">
+
+                    <div class="device-card">
+
+                        <div class="device-card-top">
+
+                            <div class="device-icon">
+                                <i class="bi bi-snow" aria-hidden="true"></i>
+                            </div>
+
+                            <span class="device-status active">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <h3>Air Conditioner</h3>
+
+                        <p>Samsung · Living Room</p>
+
+                        <div class="device-footer">
+                            <span>Warranty</span>
+                            <strong>8 months</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="device-card">
+
+                        <div class="device-card-top">
+
+                            <div class="device-icon">
+                                <i class="bi bi-thermometer-snow" aria-hidden="true"></i>
+                            </div>
+
+                            <span class="device-status active">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <h3>Refrigerator</h3>
+
+                        <p>LG · Kitchen</p>
+
+                        <div class="device-footer">
+                            <span>Warranty</span>
+                            <strong class="warn">23 days</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="device-card">
+
+                        <div class="device-card-top">
+
+                            <div class="device-icon">
+                                <i class="bi bi-box-seam" aria-hidden="true"></i>
+                            </div>
+
+                            <span class="device-status maintenance">
+                                Maintenance
+                            </span>
+
+                        </div>
+
+                        <h3>Washing Machine</h3>
+
+                        <p>Samsung · Laundry Room</p>
+
+                        <div class="device-footer">
+                            <span>Last Service</span>
+                            <strong>Sep 28</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

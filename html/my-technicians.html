@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Technicians | HOMEmind</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123B5D'/%3E%3Cpath d='M16 7 6.5 15H9v9h14v-9h2.5z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-2.6-1.8-3.9-3-3.9-4.5 0-1.1.8-1.9 1.8-1.9.8 0 1.6.4 2.1 1.1.5-.7 1.3-1.1 2.1-1.1 1 0 1.8.8 1.8 1.9 0 1.5-1.3 2.7-3.9 4.5z' fill='%232A9D8F'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/my-devices.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <a href="dashboard.html" class="home-logo">
+
+                <span class="logo-icon">
+                    <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+                </span>
+
+                <span class="logo-text">
+                    HOME<span>mind</span>
+                </span>
+
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-devices.html" class="sidebar-link">
+                <i class="bi bi-cpu" aria-hidden="true"></i>
+                <span>My Devices</span>
+            </a>
+
+            <a href="services-history.html" class="sidebar-link">
+                <i class="bi bi-tools" aria-hidden="true"></i>
+                <span>Services & History</span>
+            </a>
+            <a href="my-technicians.html" class="sidebar-link active" aria-current="page">
+                <i class="bi bi-person-badge" aria-hidden="true"></i>
+                <span>My Technicians</span>
+            </a>
+
+            <a href="ai-assistant.html" class="sidebar-link">
+                <i class="bi bi-stars" aria-hidden="true"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="live-dispatch.html" class="sidebar-link">
+                <i class="bi bi-broadcast" aria-hidden="true"></i>
+                <span>Live Service Dispatch</span>
+            </a>
+
+            <p class="nav-title">MANAGEMENT</p>
+
+            <a href="notifications.html" class="sidebar-link">
+                <i class="bi bi-bell" aria-hidden="true"></i>
+                <span>Notifications</span>
+                <span class="notification-badge">3</span>
+            </a>
+
+            <a href="management/maintenance-history.html" class="sidebar-link">
+                <i class="bi bi-clock-history" aria-hidden="true"></i>
+                <span>Maintenance History</span>
+            </a>
+
+            <a href="management/warranty.html" class="sidebar-link">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+                <span>Warranty Center</span>
+            </a>
+
+            <a href="management/repair-replace.html" class="sidebar-link">
+                <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+                <span>Repair vs Replace</span>
+            </a>
+
+            <p class="nav-title">ACCOUNT</p>
+
+            <a href="profile.html" class="sidebar-link">
+                <i class="bi bi-person" aria-hidden="true"></i>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-help">
+                <i class="bi bi-headset" aria-hidden="true"></i>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>We're here for you.</span>
+                </div>
+            </div>
+
+            <a href="home.html" class="logout-link">
+                <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- PAGE HEADER -->
+        <header class="page-header">
+            <div>
+                <p class="page-label">YOUR TRUSTED TEAM</p>
+                <h1>My Technicians</h1>
+                <p class="page-description">
+                    Technicians who have already worked on your equipment. Request them again in one click.
+                </p>
+            </div>
+            <a href="live-dispatch.html" class="primary-action">
+                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                Request a Technician
+            </a>
+        </header>
+
+        <!-- ================= SUMMARY ================= -->
+        <section class="device-stats">
+
+            <div class="device-stat-card">
+                <div class="stat-icon blue">
+                    <i class="bi bi-person-badge" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <span>Technicians</span>
+                    <strong data-count="3">3</strong>
+                </div>
+            </div>
+
+            <div class="device-stat-card">
+                <div class="stat-icon teal">
+                    <i class="bi bi-check-circle" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <span>Available now</span>
+                    <strong data-count="2">2</strong>
+                </div>
+            </div>
+
+            <div class="device-stat-card">
+                <div class="stat-icon orange">
+                    <i class="bi bi-tools" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <span>On a job</span>
+                    <strong data-count="1">1</strong>
+                </div>
+            </div>
+
+            <div class="device-stat-card">
+                <div class="stat-icon green">
+                    <i class="bi bi-clipboard-check" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <span>Jobs completed</span>
+                    <strong data-count="4">4</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= TECHNICIANS ================= -->
+        <section class="devices-section">
+            <div class="section-top">
+                <div>
+                    <h2>Previous Technicians</h2>
+                    <p>Everyone who has completed a service for you through HOMEmind.</p>
+                </div>
+            </div>
+
+            <div class="devices-grid">
+
+                <article class="device-card">
+                    <div class="device-card-header">
+                        <div class="device-image">
+                            <i class="bi bi-lightning-charge" aria-hidden="true"></i>
+                        </div>
+                        <span class="device-status active">
+                            Available
+                        </span>
+                    </div>
+                    <div class="device-content">
+                        <p class="device-type">ELECTRICAL</p>
+                        <h3>Yousef Al-Rawashdeh</h3>
+                        <p class="device-brand">2 completed for you</p>
+                        <div class="device-info">
+                            <div>
+                                <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                4.8 rating
+                            </div>
+                            <div>
+                                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                                Amman
+                            </div>
+                            <div>
+                                <i class="bi bi-calendar-check" aria-hidden="true"></i>
+                                Last visit: 12 Sep 2026
+                            </div>
+                        </div>
+                    </div>
+                    <a href="live-dispatch.html" class="device-details">
+                        Request Again
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="rate-technician.html" class="device-details rate-link">
+                        Rate this technician
+                        <i class="bi bi-star" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="device-card">
+                    <div class="device-card-header">
+                        <div class="device-image">
+                            <i class="bi bi-snow" aria-hidden="true"></i>
+                        </div>
+                        <span class="device-status active">
+                            Available
+                        </span>
+                    </div>
+                    <div class="device-content">
+                        <p class="device-type">AIR CONDITIONING</p>
+                        <h3>Hala Mansour</h3>
+                        <p class="device-brand">1 completed for you</p>
+                        <div class="device-info">
+                            <div>
+                                <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                4.7 rating
+                            </div>
+                            <div>
+                                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                                Amman
+                            </div>
+                            <div>
+                                <i class="bi bi-calendar-check" aria-hidden="true"></i>
+                                Last visit: 28 Aug 2026
+                            </div>
+                        </div>
+                    </div>
+                    <a href="live-dispatch.html" class="device-details">
+                        Request Again
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="rate-technician.html" class="device-details rate-link">
+                        Rate this technician
+                        <i class="bi bi-star" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="device-card">
+                    <div class="device-card-header">
+                        <div class="device-image">
+                            <i class="bi bi-droplet" aria-hidden="true"></i>
+                        </div>
+                        <span class="device-status maintenance">
+                            On a job
+                        </span>
+                    </div>
+                    <div class="device-content">
+                        <p class="device-type">WATER &AMP; PLUMBING</p>
+                        <h3>Tareq Daoud</h3>
+                        <p class="device-brand">1 completed for you</p>
+                        <div class="device-info">
+                            <div>
+                                <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                4.5 rating
+                            </div>
+                            <div>
+                                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                                Zarqa
+                            </div>
+                            <div>
+                                <i class="bi bi-calendar-check" aria-hidden="true"></i>
+                                Last visit: 03 Aug 2026
+                            </div>
+                        </div>
+                    </div>
+                    <a href="live-dispatch.html" class="device-details">
+                        Request Again
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="rate-technician.html" class="device-details rate-link">
+                        Rate this technician
+                        <i class="bi bi-star" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+</div>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

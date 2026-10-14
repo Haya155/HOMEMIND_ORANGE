@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Service Dispatch | HOMEmind</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123B5D'/%3E%3Cpath d='M16 7 6.5 15H9v9h14v-9h2.5z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-2.6-1.8-3.9-3-3.9-4.5 0-1.1.8-1.9 1.8-1.9.8 0 1.6.4 2.1 1.1.5-.7 1.3-1.1 2.1-1.1 1 0 1.8.8 1.8 1.9 0 1.5-1.3 2.7-3.9 4.5z' fill='%232A9D8F'/%3E%3C/svg%3E">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/live-dispatch.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <a href="dashboard.html" class="sidebar-logo">
+
+            <span class="logo-icon">
+                <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+            </span>
+
+            <span class="logo-text">
+                HOME<span>mind</span>
+            </span>
+
+        </a>
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section">
+
+                <p class="nav-title">MAIN</p>
+
+                <a href="dashboard.html" class="sidebar-link">
+                    <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="my-devices.html" class="sidebar-link">
+                    <i class="bi bi-cpu-fill" aria-hidden="true"></i>
+                    <span>My Devices</span>
+                </a>
+
+                <a href="services-history.html" class="sidebar-link">
+                    <i class="bi bi-tools" aria-hidden="true"></i>
+                    <span>Services & History</span>
+                </a>
+                <a href="my-technicians.html" class="sidebar-link">
+                    <i class="bi bi-person-badge" aria-hidden="true"></i>
+                    <span>My Technicians</span>
+                </a>
+
+                <a href="ai-assistant.html" class="sidebar-link">
+                    <i class="bi bi-stars" aria-hidden="true"></i>
+                    <span>AI Assistant</span>
+                </a>
+
+                <a href="live-dispatch.html" class="sidebar-link active">
+                    <i class="bi bi-broadcast-pin" aria-hidden="true"></i>
+                    <span>Live Service Dispatch</span>
+                </a>
+
+                <a href="notifications.html" class="sidebar-link">
+                    <i class="bi bi-bell-fill" aria-hidden="true"></i>
+                    <span>Notifications</span>
+                    <span class="notification-badge">3</span>
+                </a>
+
+            </div>
+
+            <div class="nav-section">
+
+                <p class="nav-title">MANAGEMENT</p>
+
+                <a href="management/maintenance-history.html" class="sidebar-link">
+                    <i class="bi bi-clock-history" aria-hidden="true"></i>
+                    <span>Maintenance History</span>
+                </a>
+
+                <a href="management/warranty.html" class="sidebar-link">
+                    <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    <span>Warranty Center</span>
+                </a>
+
+                <a href="management/repair-replace.html" class="sidebar-link">
+                    <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                    <span>Repair vs Replace</span>
+                </a>
+
+            </div>
+
+            <div class="nav-section">
+
+                <p class="nav-title">ACCOUNT</p>
+
+                <a href="profile.html" class="sidebar-link">
+                    <i class="bi bi-person-fill" aria-hidden="true"></i>
+                    <span>Profile</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <div class="help-icon">
+                    <i class="bi bi-headset" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <strong>Need help?</strong>
+                    <p>We're here for you.</p>
+                </div>
+
+            </div>
+
+            <a href="home.html" class="logout-link">
+                <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="page-label">
+                    TECHNICIAN SERVICES
+                </p>
+
+                <h1>Live Service Dispatch</h1>
+
+                <p class="page-description">
+                    Request a qualified technician and track your service request
+                    from submission to completion.
+                </p>
+
+            </div>
+
+            <div class="live-status">
+                <span class="status-dot"></span>
+                Service Network Online
+            </div>
+
+        </div>
+
+
+        <!-- ================= DISPATCH HERO ================= -->
+
+        <section class="dispatch-hero">
+
+            <div class="dispatch-hero-icon">
+                <i class="bi bi-broadcast-pin" aria-hidden="true"></i>
+            </div>
+
+            <div>
+
+                <span class="dispatch-badge">
+                    LIVE DISPATCH
+                </span>
+
+                <h2>Find the right technician for your problem.</h2>
+
+                <p>
+                    Tell us what you need and HOMEmind will match your request
+                    with an available qualified technician.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REQUEST AREA ================= -->
+
+        <div class="dispatch-layout">
+
+            <!-- REQUEST FORM -->
+
+            <section class="request-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <p class="card-label">
+                            SERVICE REQUEST
+                        </p>
+
+                        <h2>Request a Technician</h2>
+                    </div>
+
+                    <span class="step-badge">
+                        Step 1 of 2
+                    </span>
+
+                </div>
+
+
+                <!-- DEVICE -->
+
+                <div class="form-group">
+
+                    <label for="device">
+                        Device
+                    </label>
+
+                    <select id="device" name="device">
+
+                        <option selected>
+                            Air Conditioner — Samsung
+                        </option>
+
+                        <option>
+                            Refrigerator — LG
+                        </option>
+
+                        <option>
+                            Washing Machine — Samsung
+                        </option>
+
+                        <option>
+                            Water Heater — Ariston
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SERVICE TYPE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Service Type
+                    </label>
+
+                    <div class="service-options">
+
+                        <label class="service-option">
+
+                            <input type="radio" name="serviceType" checked>
+
+                            <span class="option-icon">
+                                <i class="bi bi-wrench-adjustable" aria-hidden="true"></i>
+                            </span>
+
+                            <span class="option-content">
+                                <strong>Repair</strong>
+                                <small>Fix an existing problem</small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="service-option">
+
+                            <input type="radio" name="serviceType">
+
+                            <span class="option-icon">
+                                <i class="bi bi-tools" aria-hidden="true"></i>
+                            </span>
+
+                            <span class="option-content">
+                                <strong>Maintenance</strong>
+                                <small>Routine service</small>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROBLEM -->
+
+                <div class="form-group">
+
+                    <label for="problem">
+                        Describe the Problem
+                    </label>
+
+                    <textarea
+                        id="problem" name="problem"
+                        rows="5"
+                        placeholder="Describe what is happening with your device..."
+                    ></textarea>
+
+                    <p class="field-hint">
+                        <i class="bi bi-info-circle" aria-hidden="true"></i>
+                        Include any sounds, errors, leaks, or unusual behavior.
+                    </p>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Service Location
+                    </label>
+
+                    <div class="location-input">
+
+                        <i class="bi bi-geo-alt" aria-hidden="true"></i>
+
+                        <input
+                            type="text"
+                            id="location" name="location"
+                            value="Living Room — Amman"
+                            placeholder="Enter service location"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PREFERRED TIME -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            Preferred Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date" name="date"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="time">
+                            Preferred Time
+                        </label>
+
+                        <select id="time" name="time">
+
+                            <option selected>
+                                10:00 AM – 12:00 PM
+                            </option>
+
+                            <option>
+                                12:00 PM – 02:00 PM
+                            </option>
+
+                            <option>
+                                02:00 PM – 04:00 PM
+                            </option>
+
+                            <option>
+                                04:00 PM – 06:00 PM
+                            </option>
+
+                            <option>
+                                06:00 PM – 08:00 PM
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO -->
+
+                <div class="photo-upload">
+
+                    <div class="photo-icon">
+                        <i class="bi bi-camera" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="photo-content">
+
+                        <strong>Add Photos</strong>
+
+                        <p>
+                            Optional — help the technician understand the problem.
+                        </p>
+
+                    </div>
+
+                    <label for="servicePhoto" class="upload-button">
+                        <i class="bi bi-upload" aria-hidden="true"></i>
+                        Upload
+                    </label>
+
+                    <input
+                        type="file"
+                        id="servicePhoto" name="servicePhoto"
+                        accept="image/png, image/jpeg, image/webp"
+                    >
+
+                </div>
+
+
+                <!-- ACTION -->
+
+                <div class="request-action">
+
+                    <a href="device-details.html" class="back-button">
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                        Back
+                    </a>
+
+                    <button type="button" class="request-button">
+                        <i class="bi bi-broadcast" aria-hidden="true"></i>
+                        Find a Technician
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SIDE SUMMARY ================= -->
+
+            <aside class="dispatch-summary">
+
+                <!-- MATCHING -->
+
+                <div class="summary-card matching-card">
+
+                    <div class="summary-icon">
+                        <i class="bi bi-person-check" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>Smart Technician Matching</h3>
+
+                    <p>
+                        HOMEmind will match your request based on technician
+                        expertise, availability, and service location.
+                    </p>
+
+                    <div class="matching-items">
+
+                        <div>
+                            <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                            Qualified technicians
+                        </div>
+
+                        <div>
+                            <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                            Nearby availability
+                        </div>
+
+                        <div>
+                            <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                            Service specialization
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ESTIMATE -->
+
+                <div class="summary-card estimate-card">
+
+                    <div class="summary-top">
+
+                        <div>
+
+                            <p class="summary-label">
+                                ESTIMATED SERVICE
+                            </p>
+
+                            <h3>Starting from</h3>
+
+                        </div>
+
+                        <i class="bi bi-cash-stack" aria-hidden="true"></i>
+
+                    </div>
+
+                    <div class="price">
+                        15 <span>JOD</span>
+                    </div>
+
+                    <p>
+                        Final cost depends on diagnosis, parts, and technician
+                        service.
+                    </p>
+
+                </div>
+
+
+                <!-- COMMISSION -->
+
+                <div class="commission-card">
+
+                    <div class="commission-icon">
+                        <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>Transparent Pricing</strong>
+
+                        <p>
+                            You will see the final service cost before confirming
+                            the request.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section class="process-section">
+
+            <div class="section-heading">
+
+                <p class="page-label">
+                    SERVICE PROCESS
+                </p>
+
+                <h2>What Happens Next?</h2>
+
+            </div>
+
+
+            <div class="process-grid">
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+                    <div class="process-icon">
+                        <i class="bi bi-send" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>Submit Request</h3>
+
+                    <p>
+                        Tell us about your device and the service you need.
+                    </p>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+                    <div class="process-icon">
+                        <i class="bi bi-person-workspace" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>Technician Matching</h3>
+
+                    <p>
+                        We find a suitable technician based on your request.
+                    </p>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+                    <div class="process-icon">
+                        <i class="bi bi-broadcast" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>Track Service</h3>
+
+                    <p>
+                        Follow your request and service status in real time.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOTE ================= -->
+
+        <div class="service-note">
+
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+
+            <p>
+                Technician availability and final pricing will be confirmed
+                after your request is reviewed.
+            </p>
+
+        </div>
+
+    </main>
+
+</div>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

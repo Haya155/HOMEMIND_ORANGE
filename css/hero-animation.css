@@ -1,0 +1,62 @@
+/* HOMEmind hero animation (inline SVG, scoped under .hm-anim) */
+.hm-anim{width:100%;max-width:660px;margin:0 auto;position:relative}
+.hm-anim svg{display:block;width:100%;height:auto;overflow:visible;font-family:inherit}
+@media (prefers-reduced-motion:reduce){.hm-anim svg *{animation-play-state:paused!important}}
+@media (max-width:991px){.hm-anim{max-width:540px}}
+.hm-anim svg *{transform-box:fill-box;transform-origin:center}
+.hm-anim .fl{animation:hm-fl 4s ease-in-out infinite alternate}
+@keyframes hm-fl{from{transform:translateY(-6px)}to{transform:translateY(6px)}}
+.hm-anim .pa{animation:hm-pa 8s ease-in-out infinite}
+@keyframes hm-pa{50%{transform:translate(-10px,5px)}}
+.hm-anim .pb{animation:hm-pb 8s ease-in-out infinite}
+@keyframes hm-pb{50%{transform:translate(5px,-3px)}}
+.hm-anim .dash{stroke-dasharray:6 10;animation:hm-dd 2s linear infinite}
+@keyframes hm-dd{to{stroke-dashoffset:-32}}
+.hm-anim .pul{animation:hm-pr 2s ease-out infinite}
+@keyframes hm-pr{from{transform:scale(1);opacity:.7}to{transform:scale(2.6);opacity:0}}
+.hm-anim .spin{animation:hm-sp 4s linear infinite}
+.hm-anim .spin8{animation:hm-sp 8s linear infinite}
+@keyframes hm-sp{to{transform:rotate(360deg)}}
+.hm-anim .blk{animation:hm-bl 2s ease-in-out infinite}
+@keyframes hm-bl{50%{opacity:.25}}
+.hm-anim .eq{transform-origin:50% 100%;animation:hm-eq 2s ease-in-out infinite}
+@keyframes hm-eq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+.hm-anim .b{transform-origin:0 50%}
+.hm-anim .wr{animation:hm-wr 8s ease-in-out infinite}
+@keyframes hm-wr{0%,21%{opacity:0;transform:scale(.5)}25%,56%{opacity:1;transform:scale(1)}60%,100%{opacity:0;transform:scale(.5)}}
+.hm-anim .ok{animation:hm-ok 8s ease-in-out infinite}
+@keyframes hm-ok{0%,60%{opacity:0;transform:scale(.4)}66%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(1)}}
+.hm-anim .ai{animation:hm-ai 8s ease-in-out infinite}
+@keyframes hm-ai{0%,27%{opacity:0;transform:translate(-24px,16px) scale(.9)}32%,51%{opacity:1;transform:none}56%,100%{opacity:0;transform:translate(0,12px) scale(.95)}}
+.hm-anim .sv{animation:hm-sv 8s ease-in-out infinite}
+@keyframes hm-sv{0%,54%{opacity:0;transform:translate(-24px,16px) scale(.9)}59%,89%{opacity:1;transform:none}95%,100%{opacity:0;transform:translate(0,12px) scale(.95)}}
+.hm-anim .s1{animation:hm-s1 8s infinite}
+.hm-anim .s2{animation:hm-s2 8s infinite}
+.hm-anim .s3{animation:hm-s3 8s infinite}
+@keyframes hm-s1{0%,31%{opacity:.3}34%,53%{opacity:1}56%,100%{opacity:.3}}
+@keyframes hm-s2{0%,38%{opacity:.3}41%,53%{opacity:1}56%,100%{opacity:.3}}
+@keyframes hm-s3{0%,45%{opacity:.3}48%,53%{opacity:1}56%,100%{opacity:.3}}
+.hm-anim .ap{animation:hm-ap 8s ease-in-out infinite}
+@keyframes hm-ap{0%,32%{transform:scaleX(0)}50%,53%{transform:scaleX(1)}56%,100%{transform:scaleX(0)}}
+.hm-anim .t1{animation:hm-t1 8s infinite}
+.hm-anim .t2{animation:hm-t2 8s infinite}
+.hm-anim .t3{animation:hm-t3 8s infinite}
+@keyframes hm-t1{0%,58%{opacity:.3}61%,91%{opacity:1}95%,100%{opacity:.3}}
+@keyframes hm-t2{0%,65%{opacity:.3}68%,91%{opacity:1}95%,100%{opacity:.3}}
+@keyframes hm-t3{0%,77%{opacity:.3}80%,91%{opacity:1}95%,100%{opacity:.3}}
+.hm-anim .sp{animation:hm-sp2 8s ease-in-out infinite}
+@keyframes hm-sp2{0%,59%{transform:scaleX(0)}80%,91%{transform:scaleX(1)}95%,100%{transform:scaleX(0)}}
+.hm-anim .bd{animation:hm-bd 8s ease-in-out infinite}
+@keyframes hm-bd{0%,60%{opacity:0;transform:translate(0,0)}63%{opacity:1;transform:translate(0,0)}76%,88%{opacity:1;transform:translate(175px,-258px)}92%,100%{opacity:0;transform:translate(175px,-258px)}}
+.hm-anim .tl{animation:hm-tl 8s infinite}
+@keyframes hm-tl{0%,61%{opacity:0}65%,88%{opacity:1}92%,100%{opacity:0}}
+.hm-anim .hb{animation:hm-hb 8s ease-in-out infinite}
+@keyframes hm-hb{0%,22%{fill:#2A9D8F;transform:scaleX(1)}30%,58%{fill:#f97316;transform:scaleX(.5)}68%,100%{fill:#2A9D8F;transform:scaleX(1)}}
+.hm-anim .md{animation:hm-md 8s ease-in-out infinite}
+@keyframes hm-md{0%,24%{fill:#2A9D8F}30%,58%{fill:#f97316}68%,100%{fill:#2A9D8F}}
+.hm-anim .hs{animation:hm-hs 8s ease-in-out infinite}
+@keyframes hm-hs{0%,24%{stroke:#2A9D8F}30%,58%{stroke:#f97316}68%,100%{stroke:#2A9D8F}}
+.hm-anim .hi{animation:hm-hi 8s ease-in-out infinite}
+@keyframes hm-hi{0%,84%{opacity:0;transform:scale(.3)}88%,95%{opacity:1;transform:scale(1)}99%,100%{opacity:0;transform:scale(1)}}
+.hm-anim .wb{animation:hm-wb 8s ease-in-out infinite}
+@keyframes hm-wb{50%{transform:scaleX(.95)}}

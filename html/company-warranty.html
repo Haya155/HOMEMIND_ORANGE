@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty & Schedule | HOMEmind</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123B5D'/%3E%3Cpath d='M16 7 6.5 15H9v9h14v-9h2.5z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-2.6-1.8-3.9-3-3.9-4.5 0-1.1.8-1.9 1.8-1.9.8 0 1.6.4 2.1 1.1.5-.7 1.3-1.1 2.1-1.1 1 0 1.8.8 1.8 1.9 0 1.5-1.3 2.7-3.9 4.5z' fill='%232A9D8F'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/workspace.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <a class="brand" href="home.html" aria-label="HOMEmind home">
+                <span class="brand-mark"><i class="bi bi-house-heart-fill" aria-hidden="true"></i></span>
+                <span class="brand-name">HOME<span>mind</span></span>
+            </a>
+
+            <div class="sidebar-label">WORKSPACE</div>
+            <nav class="sidebar-nav" aria-label="Company navigation">
+                <a class="nav-link" href="company-dashboard.html">
+                    <i class="bi bi-grid-1x2" aria-hidden="true"></i><span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="company-locations.html">
+                    <i class="bi bi-buildings" aria-hidden="true"></i><span>Locations</span>
+                </a>
+                <a class="nav-link" href="company-equipment.html">
+                    <i class="bi bi-cpu" aria-hidden="true"></i><span>Equipment</span>
+                    <span class="nav-count">128</span>
+                </a>
+                <a class="nav-link" href="company-technicians.html">
+                    <i class="bi bi-people" aria-hidden="true"></i><span>Technicians</span>
+                </a>
+
+                <div class="sidebar-label sidebar-label-spaced">OPERATIONS</div>
+                <a class="nav-link" href="company-requests.html">
+                    <i class="bi bi-inbox" aria-hidden="true"></i><span>Service Requests</span>
+                    <span class="nav-count">7</span>
+                </a>
+                <a class="nav-link" href="company-maintenance.html">
+                    <i class="bi bi-journal-check" aria-hidden="true"></i><span>Maintenance Log</span>
+                </a>
+                <a class="nav-link active" href="company-warranty.html" aria-current="page">
+                    <i class="bi bi-shield-check" aria-hidden="true"></i><span>Warranty & Schedule</span>
+                </a>
+
+                <div class="sidebar-label sidebar-label-spaced">INSIGHTS</div>
+                <a class="nav-link" href="company-reports.html">
+                    <i class="bi bi-bar-chart-line" aria-hidden="true"></i><span>Reports & Analytics</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-help">
+                <div class="help-icon"><i class="bi bi-headset" aria-hidden="true"></i></div>
+                <h3>Need help?</h3>
+                <p>Contact HOMEmind support for help managing your sites and equipment.</p>
+                <a href="home.html#contact">Contact Support <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+
+            <a class="logout-link" href="home.html">
+                <i class="bi bi-box-arrow-left" aria-hidden="true"></i><span>Back to Home</span>
+            </a>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-title">
+                    <p class="eyebrow">COMPANY WORKSPACE</p>
+                    <h1>Warranty & Schedule</h1>
+                </div>
+                <div class="topbar-actions">
+                    <a class="icon-button" href="company-warranty.html" aria-label="Notifications">
+                        <i class="bi bi-bell" aria-hidden="true"></i><span class="notification-dot"></span>
+                    </a>
+                    <a class="profile-chip" href="company-dashboard.html">
+                        <span class="avatar">A</span>
+                        <span class="profile-copy"><strong>Amman Towers Group</strong><small>Company Admin</small></span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="page-stack">
+                <section class="stats-grid">
+                    <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-teal"><i class="bi bi-shield-check" aria-hidden="true"></i></span><span class="stat-caption">Active</span></div><p class="stat-value" data-count="4">4</p><p class="stat-label">Warranties still valid</p></article>
+                    <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-orange"><i class="bi bi-hourglass-split" aria-hidden="true"></i></span><span class="stat-caption">Ending soon</span></div><p class="stat-value" data-count="1">1</p><p class="stat-label">Ends within 90 days</p></article>
+                    <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-purple"><i class="bi bi-shield-x" aria-hidden="true"></i></span><span class="stat-caption">Expired</span></div><p class="stat-value" data-count="4">4</p><p class="stat-label">Warranties expired</p></article>
+                    <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-blue"><i class="bi bi-calendar-event" aria-hidden="true"></i></span><span class="stat-caption">Due soon</span></div><p class="stat-value" data-count="2">2</p><p class="stat-label">Maintenance due in 14 days</p></article>
+                </section>
+                <article class="panel">
+                    <div class="panel-header"><div><p class="panel-eyebrow">ALERTS</p><h2>Reminders we sent you</h2></div></div>
+                <div class="notif-item unread"><span class="stat-icon icon-blue"><i class="bi bi-shield-exclamation" aria-hidden="true"></i></span><div><h3>Warranty ending soon</h3><p>The warranty of Split AC (Floor 5) ends on 15 Dec 2026.</p></div></div>
+                <div class="notif-item unread"><span class="stat-icon icon-blue"><i class="bi bi-calendar-event" aria-hidden="true"></i></span><div><h3>Maintenance due</h3><p>Chiller #2 quarterly inspection is due on 15 Oct 2026.</p></div></div>
+                <div class="notif-item"><span class="stat-icon icon-blue"><i class="bi bi-calendar-event" aria-hidden="true"></i></span><div><h3>Maintenance due</h3><p>Backup Generator load test is due on 20 Oct 2026.</p></div></div>
+                </article>
+                <article class="panel">
+                    <div class="panel-header"><div><p class="panel-eyebrow">WARRANTIES</p><h2>Warranty end dates</h2></div></div>
+                    <div class="table-wrap"><table class="data-table">
+                            <thead><tr><th>Device</th><th>Site</th><th>Warranty ends</th><th>Status</th></tr></thead>
+                            <tbody>
+                            <tr><td><strong>Split AC (Floor 5)</strong></td><td>Abdali Office Tower</td><td>15 Dec 2026</td><td><span class="badge badge-pending">Ends in 66 days</span></td></tr>
+                            <tr><td><strong>Elevator Motor</strong></td><td>Abdali Office Tower</td><td>20 Jan 2027</td><td><span class="badge badge-paid">Valid</span></td></tr>
+                            <tr><td><strong>Backup Generator</strong></td><td>Al-Shifa Medical Wing</td><td>10 Mar 2027</td><td><span class="badge badge-paid">Valid</span></td></tr>
+                            <tr><td><strong>Medical Fridge</strong></td><td>Al-Shifa Medical Wing</td><td>5 May 2027</td><td><span class="badge badge-paid">Valid</span></td></tr>
+                            <tr><td><strong>Chiller #2</strong></td><td>Al-Shifa Medical Wing</td><td>30 Aug 2026</td><td><span class="badge badge-urgent">Expired</span></td></tr>
+                            <tr><td><strong>Water Pump P-3</strong></td><td>Sweifieh Residential</td><td>12 Mar 2026</td><td><span class="badge badge-urgent">Expired</span></td></tr>
+                            <tr><td><strong>Forklift Charger</strong></td><td>Sahab Warehouse</td><td>1 Feb 2026</td><td><span class="badge badge-urgent">Expired</span></td></tr>
+                            <tr><td><strong>Water Heater Boiler</strong></td><td>Sweifieh Residential</td><td>4 Jan 2026</td><td><span class="badge badge-urgent">Expired</span></td></tr>
+                            </tbody>
+                    </table></div>
+                </article>
+                <article class="panel">
+                    <div class="panel-header"><div><p class="panel-eyebrow">PERIODIC MAINTENANCE</p><h2>Next scheduled maintenance</h2></div></div>
+                    <div class="table-wrap"><table class="data-table">
+                            <thead><tr><th>Device</th><th>Task</th><th>Repeats</th><th>Next due</th><th>Status</th></tr></thead>
+                            <tbody>
+                            <tr><td><strong>Chiller #2</strong></td><td>Quarterly inspection</td><td>Every 3 months</td><td>15 Oct 2026</td><td><span class="badge badge-pending">Due in 5 days</span></td></tr>
+                            <tr><td><strong>Backup Generator</strong></td><td>Load test</td><td>Every month</td><td>20 Oct 2026</td><td><span class="badge badge-pending">Due in 10 days</span></td></tr>
+                            <tr><td><strong>Elevator Motor</strong></td><td>Safety check</td><td>Every 3 months</td><td>2 Dec 2026</td><td><span class="badge badge-paid">On track</span></td></tr>
+                            <tr><td><strong>Medical Fridge</strong></td><td>Calibration</td><td>Every 3 months</td><td>25 Dec 2026</td><td><span class="badge badge-paid">On track</span></td></tr>
+                            <tr><td><strong>Split AC (Floor 5)</strong></td><td>Filter and gas check</td><td>Every 6 months</td><td>20 Jan 2027</td><td><span class="badge badge-paid">On track</span></td></tr>
+                            </tbody>
+                    </table></div>
+                </article>
+            </div>
+
+            <footer class="dashboard-footer">
+                <span>© 2026 HOMEmind. Smart Maintenance. Smarter Living.</span>
+                <span><i class="bi bi-shield-check" aria-hidden="true"></i> Company workspace</span>
+            </footer>
+        </main>
+    </div>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

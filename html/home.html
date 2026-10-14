@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HOMEmind - Smart Home Maintenance</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123B5D'/%3E%3Cpath d='M16 7 6.5 15H9v9h14v-9h2.5z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-2.6-1.8-3.9-3-3.9-4.5 0-1.1.8-1.9 1.8-1.9.8 0 1.6.4 2.1 1.1.5-.7 1.3-1.1 2.1-1.1 1 0 1.8.8 1.8 1.9 0 1.5-1.3 2.7-3.9 4.5z' fill='%232A9D8F'/%3E%3C/svg%3E">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Home CSS -->
+    <link rel="stylesheet" href="../css/home.css">
+
+    <!-- Hero Animation CSS (inline, no extra file needed) -->
+    <style>
+/* HOMEmind full-hero animation (inline SVG, everything scoped under .hm-anim / .hm-bg) */
+.hero-section{position:relative;overflow:hidden}
+.hero-section .container{position:relative;z-index:2}
+.hm-bg{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hm-anim,.hm-anim svg{display:block;width:100%;height:100%}
+.hero-content{position:relative}
+.hero-content::before{content:"";position:absolute;z-index:-1;inset:-36px -70px -36px -90px;border-radius:44px;background:radial-gradient(ellipse at 38% 50%,rgba(247,250,252,.92) 0,rgba(247,250,252,.7) 48%,rgba(247,250,252,0) 74%)}
+.hero-content>*{animation:hm-in .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-content>*:nth-child(2){animation-delay:.08s}.hero-content>*:nth-child(3){animation-delay:.16s}.hero-content>*:nth-child(4){animation-delay:.24s}.hero-content>*:nth-child(5){animation-delay:.32s}
+@keyframes hm-in{from{opacity:0;transform:translateY(16px)}}
+@media (prefers-reduced-motion:reduce){.hero-content>*{animation:none}.hm-anim svg *{animation-play-state:paused!important}}
+@media (max-width:991px){.hm-bg{opacity:.3}.hero-content::before{inset:-20px -20px}}
+.hm-anim svg{font-family:inherit}
+.hm-anim svg *{transform-box:fill-box;transform-origin:center}
+.hm-anim .hm-px{transition:transform .5s ease-out}
+.hm-anim .hm-px-back{transform:translate(calc(var(--mx,0) * -6px),calc(var(--my,0) * -4px))}
+.hm-anim .hm-px-front{transform:translate(calc(var(--mx,0) * -16px),calc(var(--my,0) * -10px))}
+.hm-anim .fl{animation:hm-fl 4s ease-in-out infinite alternate}
+@keyframes hm-fl{from{transform:translateY(-6px)}to{transform:translateY(6px)}}
+.hm-anim .pa{animation:hm-pa 8s ease-in-out infinite}@keyframes hm-pa{50%{transform:translate(-8px,4px)}}
+.hm-anim .pb{animation:hm-pb 8s ease-in-out infinite}@keyframes hm-pb{50%{transform:translate(4px,-2px)}}
+.hm-anim .dash{stroke-dasharray:6 10;animation:hm-dd 2s linear infinite}@keyframes hm-dd{to{stroke-dashoffset:-32}}
+.hm-anim .pul{animation:hm-pr 2s ease-out infinite}@keyframes hm-pr{from{transform:scale(1);opacity:.7}to{transform:scale(2.6);opacity:0}}
+.hm-anim .spin{animation:hm-sp 4s linear infinite}.hm-anim .spin8{animation:hm-sp 8s linear infinite}@keyframes hm-sp{to{transform:rotate(360deg)}}
+.hm-anim .blk{animation:hm-bl 2s ease-in-out infinite}@keyframes hm-bl{50%{opacity:.25}}
+.hm-anim .eq{transform-origin:50% 100%;animation:hm-eq 2s ease-in-out infinite}@keyframes hm-eq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+.hm-anim .b{transform-origin:0 50%}
+.hm-anim .wr{animation:hm-wr 8s ease-in-out infinite}
+@keyframes hm-wr{0%,21%{opacity:0;transform:scale(.5)}25%,78%{opacity:1;transform:scale(1)}82%,100%{opacity:0;transform:scale(.5)}}
+.hm-anim .ok{animation:hm-ok 8s ease-in-out infinite}
+@keyframes hm-ok{0%,80%{opacity:0;transform:scale(.4)}86%,93%{opacity:1;transform:scale(1)}98%,100%{opacity:0;transform:scale(1)}}
+.hm-anim .ai{animation:hm-ai 8s ease-in-out infinite}
+@keyframes hm-ai{0%,27%{opacity:0;transform:translate(-24px,16px) scale(.9)}32%,49%{opacity:1;transform:none}54%,100%{opacity:0;transform:translate(0,12px) scale(.95)}}
+.hm-anim .sv{animation:hm-sv 8s ease-in-out infinite}
+@keyframes hm-sv{0%,52%{opacity:0;transform:translate(-24px,16px) scale(.9)}57%,92%{opacity:1;transform:none}97%,100%{opacity:0;transform:translate(0,12px) scale(.95)}}
+.hm-anim .s1{animation:hm-s1 8s infinite}.hm-anim .s2{animation:hm-s2 8s infinite}.hm-anim .s3{animation:hm-s3 8s infinite}
+@keyframes hm-s1{0%,31%{opacity:.3}34%,51%{opacity:1}54%,100%{opacity:.3}}
+@keyframes hm-s2{0%,38%{opacity:.3}41%,51%{opacity:1}54%,100%{opacity:.3}}
+@keyframes hm-s3{0%,44%{opacity:.3}47%,51%{opacity:1}54%,100%{opacity:.3}}
+.hm-anim .ap{animation:hm-ap 8s ease-in-out infinite}
+@keyframes hm-ap{0%,32%{transform:scaleX(0)}48%,51%{transform:scaleX(1)}54%,100%{transform:scaleX(0)}}
+.hm-anim .t1{animation:hm-t1 8s infinite}.hm-anim .t2{animation:hm-t2 8s infinite}.hm-anim .t3{animation:hm-t3 8s infinite}
+@keyframes hm-t1{0%,55%{opacity:.3}58%,93%{opacity:1}97%,100%{opacity:.3}}
+@keyframes hm-t2{0%,61%{opacity:.3}64%,93%{opacity:1}97%,100%{opacity:.3}}
+@keyframes hm-t3{0%,81%{opacity:.3}84%,93%{opacity:1}97%,100%{opacity:.3}}
+.hm-anim .sp{animation:hm-sp2 8s ease-in-out infinite}
+@keyframes hm-sp2{0%,56%{transform:scaleX(0)}82%,93%{transform:scaleX(1)}97%,100%{transform:scaleX(0)}}
+.hm-anim .van{animation:hm-van 8s ease-in-out infinite}
+@keyframes hm-van{0%,50%{transform:translateX(-420px)}70%,88%{transform:translateX(1010px)}100%{transform:translateX(1760px)}}
+.hm-anim .tl{animation:hm-tl 8s infinite}@keyframes hm-tl{0%,69%{opacity:0}72%,84%{opacity:1}88%,100%{opacity:0}}
+.hm-anim .bd{animation:hm-bd 8s ease-in-out infinite}
+@keyframes hm-bd{0%,70%{opacity:0;transform:translate(0,0)}72%{opacity:1;transform:translate(0,0)}78%,83%{opacity:1;transform:translate(0,-285px)}86%,100%{opacity:0;transform:translate(0,-285px)}}
+.hm-anim .gr{animation:hm-gr 8s ease-in-out infinite}@keyframes hm-gr{0%,76%{opacity:0}79%,83%{opacity:1}86%,100%{opacity:0}}
+.hm-anim .hb{animation:hm-hb 8s ease-in-out infinite}
+@keyframes hm-hb{0%,22%{fill:#2A9D8F;transform:scaleX(1)}30%,78%{fill:#f97316;transform:scaleX(.5)}88%,100%{fill:#2A9D8F;transform:scaleX(1)}}
+.hm-anim .md{animation:hm-md 8s ease-in-out infinite}
+@keyframes hm-md{0%,24%{fill:#2A9D8F}30%,78%{fill:#f97316}86%,100%{fill:#2A9D8F}}
+.hm-anim .hi{animation:hm-hi 8s ease-in-out infinite}
+@keyframes hm-hi{0%,86%{opacity:0;transform:scale(.3)}90%,96%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.hm-anim .wb{animation:hm-wb 8s ease-in-out infinite}@keyframes hm-wb{50%{transform:scaleX(.95)}}
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg home-navbar">
+
+    <div class="container">
+
+        <!-- LOGO -->
+
+        <a class="navbar-brand home-logo" href="home.html">
+
+            <div class="logo-icon">
+                <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+            </div>
+
+            <span class="logo-text">
+                HOME<span>mind</span>
+            </span>
+
+        </a>
+
+
+        <!-- MOBILE BUTTON -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar">
+
+            <i class="bi bi-list" aria-hidden="true"></i>
+
+        </button>
+
+
+        <!-- NAVIGATION -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="mainNavbar">
+
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="company-plans.html">
+                        Company Plans
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#how-it-works">
+                        How It Works
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- NAV BUTTONS -->
+
+            <div class="navbar-actions">
+
+                <a href="login.html" class="login-link">
+                    Login
+                </a>
+
+                <a href="login.html?signup=true" class="btn-primary-custom hero-btn">
+                    Get Started
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section id="home" class="hero-section">
+
+    <!-- Animated hero background (full section, fades out on the text side) -->
+    <div class="hm-bg">
+
+        <div class="hm-anim">
+
+<svg viewBox="-800 -60 2400 820" preserveAspectRatio="xMaxYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HOMEmind connects your home equipment to AI troubleshooting and technician service">
+<defs>
+<linearGradient id="hm-g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#123B5D"/><stop offset="1" stop-color="#2A9D8F"/></linearGradient>
+<linearGradient id="hm-g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#EDF3F8"/></linearGradient>
+<linearGradient id="hm-g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF4F8"/><stop offset="1" stop-color="#DDF1EE"/></linearGradient>
+<linearGradient id="hm-st" gradientUnits="userSpaceOnUse" x1="-500" y1="0" x2="900" y2="0"><stop offset="0" stop-color="#2A9D8F" stop-opacity="0"/><stop offset="1" stop-color="#2A9D8F" stop-opacity=".8"/></linearGradient>
+<linearGradient id="hm-gf" gradientUnits="userSpaceOnUse" x1="-100" y1="0" x2="1000" y2="0"><stop offset="0" stop-color="#262626"/><stop offset="1" stop-color="#fff"/></linearGradient>
+<mask id="hm-gm" maskUnits="userSpaceOnUse" x="-900" y="-60" width="2800" height="820"><rect x="-900" y="-60" width="2800" height="820" fill="url(#hm-gf)"/></mask>
+<radialGradient id="hm-o1"><stop offset="0" stop-color="#2A9D8F" stop-opacity=".17"/><stop offset="1" stop-color="#2A9D8F" stop-opacity="0"/></radialGradient>
+<radialGradient id="hm-o2"><stop offset="0" stop-color="#123B5D" stop-opacity=".09"/><stop offset="1" stop-color="#123B5D" stop-opacity="0"/></radialGradient>
+<pattern id="hm-dots" width="38" height="38" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="#123B5D" fill-opacity=".2"/></pattern>
+<filter id="hm-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#123B5D" flood-opacity=".14"/></filter>
+</defs>
+
+<!-- AMBIENT: spans the whole hero -->
+<circle cx="1250" cy="330" r="560" fill="url(#hm-o1)"/><circle cx="820" cy="640" r="320" fill="url(#hm-o2)"/>
+<rect x="-900" y="-60" width="2800" height="820" fill="url(#hm-dots)" mask="url(#hm-gm)"/>
+<g fill="none" stroke="url(#hm-st)" stroke-width="2.2" stroke-linecap="round">
+<path class="dash" d="M-800 300 C-100 300 300 250 940 332"/><path class="dash" d="M-800 455 C-50 455 450 430 940 430" style="animation-delay:-.7s"/><path class="dash" d="M-800 585 C-100 600 400 560 940 520" style="animation-delay:-1.4s"/></g>
+<g fill="#2A9D8F"><circle cx="940" cy="332" r="4.5"/><circle cx="940" cy="430" r="4.5"/><circle cx="940" cy="520" r="4.5"/><circle class="pul" cx="940" cy="430" r="5"/></g>
+<rect x="-900" y="640" width="2800" height="40" fill="#E6EEF5"/><line class="dash" x1="-900" y1="660" x2="1800" y2="660" stroke="#fff" stroke-width="3" stroke-dasharray="16 16" style="animation-duration:1.2s"/>
+
+<!-- HOUSE -->
+<g class="hm-px hm-px-back"><g class="pb">
+<ellipse cx="1220" cy="606" rx="360" ry="16" fill="#123B5D" opacity=".08"/>
+<rect x="940" y="255" width="560" height="345" rx="14" fill="url(#hm-g2)" stroke="#d3deec" stroke-width="2" filter="url(#hm-sh)"/>
+<rect x="940" y="560" width="560" height="40" fill="#DFE9F2"/>
+<g stroke="#d3deec" stroke-width="2"><line x1="1080" y1="262" x2="1080" y2="560"/><line x1="1220" y1="262" x2="1220" y2="560"/><line x1="1360" y1="262" x2="1360" y2="560"/></g>
+<polygon points="915,257 1215,158 1525,257" fill="#E4EEF4" stroke="#123B5D" stroke-width="7" stroke-linejoin="round"/>
+<!-- AC -->
+<rect x="958" y="292" width="104" height="42" rx="12" fill="#fff" stroke="#cfdbea" stroke-width="2"/><rect x="968" y="322" width="84" height="5" rx="2.5" fill="#e3ebf5"/><rect x="968" y="301" width="36" height="6" rx="3" fill="#d6e2f2"/><circle class="blk" cx="1046" cy="304" r="3.5" fill="#2A9D8F"/>
+<g stroke="#5FB3A9" stroke-width="3" stroke-linecap="round" opacity=".6"><line class="dash" x1="976" y1="344" x2="976" y2="372"/><line class="dash" x1="1010" y1="344" x2="1010" y2="372" style="animation-delay:-.7s"/><line class="dash" x1="1044" y1="344" x2="1044" y2="372" style="animation-delay:-1.3s"/></g>
+<g transform="translate(1010,313)"><g class="gr"><circle r="40" fill="none" stroke="#2A9D8F" stroke-width="3" stroke-dasharray="9 9" class="spin8" style="animation-duration:3s"/></g></g>
+<!-- Fridge -->
+<rect x="1105" y="335" width="90" height="225" rx="13" fill="#fff" stroke="#cfdbea" stroke-width="2"/><line x1="1105" y1="412" x2="1195" y2="412" stroke="#d6e2f2" stroke-width="3"/><rect x="1176" y="360" width="6" height="36" rx="3" fill="#b7c8de"/><rect x="1176" y="430" width="6" height="54" rx="3" fill="#b7c8de"/><circle class="blk" cx="1121" cy="352" r="4" fill="#2A9D8F" style="animation-delay:-1s"/>
+<!-- Washer -->
+<rect x="1240" y="450" width="100" height="110" rx="13" fill="#fff" stroke="#cfdbea" stroke-width="2"/><rect x="1251" y="461" width="78" height="12" rx="6" fill="#eef3fa"/><circle cx="1264" cy="467" r="3.5" fill="#7FBFB6"/><circle class="blk" cx="1316" cy="467" r="3" fill="#2A9D8F" style="animation-delay:-.5s"/>
+<circle cx="1290" cy="518" r="31" fill="#eef3fa" stroke="#b7c8de" stroke-width="4"/><g class="spin"><circle cx="1290" cy="518" r="22" fill="url(#hm-g3)"/><path d="M1290 498a20 20 0 0 1 20 20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="1281" cy="527" r="3.5" fill="#fff" opacity=".8"/></g>
+<!-- TV -->
+<rect x="1380" y="398" width="100" height="64" rx="8" fill="#fff" stroke="#b7c8de" stroke-width="3"/><rect x="1386" y="404" width="88" height="52" rx="5" fill="url(#hm-g3)"/>
+<g fill="url(#hm-g1)" opacity=".85"><rect class="eq" x="1400" y="424" width="9" height="28" rx="3"/><rect class="eq" x="1416" y="424" width="9" height="28" rx="3" style="animation-delay:-.5s"/><rect class="eq" x="1432" y="424" width="9" height="28" rx="3" style="animation-delay:-1s"/><rect class="eq" x="1448" y="424" width="9" height="28" rx="3" style="animation-delay:-1.5s"/></g>
+<rect x="1422" y="462" width="16" height="18" fill="#cfdbea"/><rect x="1375" y="480" width="110" height="80" rx="11" fill="#fff" stroke="#cfdbea" stroke-width="2"/><rect x="1392" y="500" width="76" height="7" rx="3.5" fill="#e3ebf5"/>
+</g></g>
+
+<!-- FRONT: dashboard, connections, panels -->
+<g class="hm-px hm-px-front">
+<g class="pa" fill="none" stroke="#2A9D8F" stroke-width="2.2" stroke-linecap="round" opacity=".8">
+<path class="dash" d="M1010 290 C1010 230 990 200 990 152"/><path class="dash" d="M1150 335 C1150 250 1130 200 1130 152" style="animation-delay:-.5s"/><path class="dash" d="M1290 450 C1290 300 1270 200 1270 152" style="animation-delay:-1s"/><path class="dash" d="M1430 398 C1430 300 1410 200 1410 152" style="animation-delay:-1.5s"/></g>
+<g transform="translate(1066,292)"><g class="wr"><circle r="11" fill="#f97316" class="pul"/><circle r="11" fill="#f97316"/><line x1="0" y1="-5" x2="0" y2="1" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cy="6" r="1.6" fill="#fff"/></g>
+<g class="ok"><circle r="14" fill="url(#hm-g1)"/><path d="M-5 0l4 4 7-8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+<g class="pa"><g class="fl"><g transform="translate(940,40)"><rect width="580" height="112" rx="22" fill="#fff" stroke="#e1e9f4" stroke-width="2" filter="url(#hm-sh)"/>
+<circle cx="30" cy="24" r="9" fill="url(#hm-g1)"/><text x="46" y="29" font-size="13" font-weight="700" fill="#123B5D">HOMEmind</text>
+<g fill="#2A9D8F"><rect class="eq" x="520" y="14" width="5" height="20" rx="2"/><rect class="eq" x="531" y="14" width="5" height="20" rx="2" style="animation-delay:-.6s"/><rect class="eq" x="542" y="14" width="5" height="20" rx="2" style="animation-delay:-1.2s"/><rect class="eq" x="553" y="14" width="5" height="20" rx="2" style="animation-delay:-.3s"/></g>
+<g transform="translate(16,46)"><rect width="129" height="56" rx="14" fill="#F4F8FB"/><circle cx="26" cy="28" r="13" fill="#EAF4F8"/><path d="M17 28h5l3-6 4 11 3-5h4" fill="none" stroke="#123B5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="50" y="13" width="50" height="6" rx="3" fill="#d6e2f2"/><rect x="50" y="34" width="64" height="8" rx="4" fill="#e1e9f3"/><rect class="b hb" x="50" y="34" width="64" height="8" rx="4"/></g><g transform="translate(157,46)"><rect width="129" height="56" rx="14" fill="#F4F8FB"/><circle cx="26" cy="28" r="13" fill="#EAF4F8"/><path d="M26 21l7 3v5c0 4-3 6-7 8-4-2-7-4-7-8v-5z" fill="none" stroke="#123B5D" stroke-width="2" stroke-linejoin="round"/><rect x="50" y="13" width="50" height="6" rx="3" fill="#d6e2f2"/><rect x="50" y="34" width="64" height="8" rx="4" fill="#e1e9f3"/><rect class="b wb" x="50" y="34" width="64" height="8" rx="4" fill="#3E7CA6" transform="scale(.74 1)"/></g><g transform="translate(298,46)"><rect width="129" height="56" rx="14" fill="#F4F8FB"/><circle cx="26" cy="28" r="13" fill="#EAF4F8"/><g class="spin8"><circle cx="26" cy="28" r="6" fill="none" stroke="#123B5D" stroke-width="2.4" stroke-dasharray="4 3"/></g><rect x="50" y="13" width="50" height="6" rx="3" fill="#d6e2f2"/><rect x="50" y="34" width="64" height="8" rx="4" fill="#e1e9f3"/><rect class="b" x="50" y="34" width="64" height="8" rx="4" fill="#5FB3A9" transform="scale(.58 1)"/><circle class="md" cx="112" cy="16" r="4"/></g><g transform="translate(439,46)"><rect width="129" height="56" rx="14" fill="#F4F8FB"/><circle cx="26" cy="28" r="13" fill="#EAF4F8"/><circle cx="26" cy="28" r="7" fill="none" stroke="#123B5D" stroke-width="2"/><path d="M26 24v4l3 2" fill="none" stroke="#123B5D" stroke-width="2" stroke-linecap="round"/><rect x="50" y="13" width="50" height="6" rx="3" fill="#d6e2f2"/><rect x="50" y="34" width="64" height="8" rx="4" fill="#e1e9f3"/><g fill="#7FBFB6"><circle cx="54" cy="38" r="4"/><circle cx="72" cy="38" r="4"/><circle cx="90" cy="38" r="4"/></g><circle class="hi" cx="108" cy="38" r="5" fill="#2A9D8F"/></g></g></g></g>
+<g class="pa"><g class="fl" style="animation-delay:-2s"><g transform="translate(1100,446)"><g class="ai"><rect width="270" height="160" rx="20" fill="#fff" stroke="#e1e9f4" filter="url(#hm-sh)"/>
+<circle cx="28" cy="26" r="8" fill="#2A9D8F"/><rect x="46" y="22" width="70" height="8" rx="4" fill="#d6e2f2"/>
+<rect x="65" y="68" width="140" height="4" rx="2" fill="#e1e9f3"/><rect class="b ap" x="65" y="68" width="140" height="4" rx="2" fill="url(#hm-g1)"/><g class="s1"><circle cx="45" cy="70" r="20" fill="#ffedd5"/><line x1="45" y1="62" x2="45" y2="71" stroke="#f97316" stroke-width="3.4" stroke-linecap="round"/><circle cx="45" cy="78" r="2.2" fill="#f97316"/></g>
+<g class="s2"><circle cx="135" cy="70" r="20" fill="#DDF1EE"/><g class="spin8"><circle cx="135" cy="70" r="8" fill="none" stroke="#1F7A70" stroke-width="3.4" stroke-dasharray="5 3.5"/></g><circle cx="135" cy="70" r="2.6" fill="#1F7A70"/></g><g class="s3"><circle cx="225" cy="70" r="20" fill="url(#hm-g1)"/><path d="M216 70l6 6 11-12" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></g><g fill="#7FBFB6"><rect class="eq" x="40" y="108" width="8" height="34" rx="4"/><rect class="eq" x="62" y="108" width="8" height="34" rx="4" style="animation-delay:-.4s"/><rect class="eq" x="84" y="108" width="8" height="34" rx="4" style="animation-delay:-1.1s"/><rect class="eq" x="106" y="108" width="8" height="34" rx="4" style="animation-delay:-.7s"/><rect class="eq" x="128" y="108" width="8" height="34" rx="4" style="animation-delay:-1.5s"/></g><rect x="160" y="118" width="70" height="8" rx="4" fill="#d6e2f2"/><rect x="160" y="132" width="46" height="8" rx="4" fill="#e8eef7"/></g></g><g transform="translate(1100,446)"><g class="sv"><rect width="270" height="160" rx="20" fill="#fff" stroke="#e1e9f4" filter="url(#hm-sh)"/>
+<circle cx="28" cy="26" r="8" fill="#123B5D"/><rect x="46" y="22" width="70" height="8" rx="4" fill="#d6e2f2"/>
+<rect x="65" y="68" width="140" height="4" rx="2" fill="#e1e9f3"/><rect class="b sp" x="65" y="68" width="140" height="4" rx="2" fill="url(#hm-g1)"/><g class="t1"><circle cx="45" cy="70" r="20" fill="#EAF4F8"/><rect x="36" y="60" width="18" height="21" rx="3" fill="none" stroke="#123B5D" stroke-width="2.4"/><line x1="40" y1="67" x2="50" y2="67" stroke="#123B5D" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="73" x2="48" y2="73" stroke="#123B5D" stroke-width="2" stroke-linecap="round"/></g>
+<g class="t2"><circle cx="135" cy="70" r="20" fill="#DDF1EE"/><path d="M127 78l11-11" stroke="#1F7A70" stroke-width="4" stroke-linecap="round"/><circle cx="141" cy="64" r="5.5" fill="none" stroke="#1F7A70" stroke-width="3"/></g><g class="t3"><circle cx="225" cy="70" r="20" fill="url(#hm-g1)"/><path d="M216 70l6 6 11-12" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="40" y="112" width="190" height="10" rx="5" fill="#eef3fa"/><rect x="40" y="132" width="120" height="10" rx="5" fill="#f4f7fb"/></g></g></g></g>
+<line class="tl dash" x1="1010" y1="334" x2="1010" y2="610" stroke="#123B5D" stroke-width="2.6" stroke-linecap="round"/>
+<g transform="translate(1010,622)"><g class="bd"><circle r="16" fill="url(#hm-g1)" filter="url(#hm-sh)"/><path d="M-6 6l9-9" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="5" cy="-5" r="4.5" fill="none" stroke="#fff" stroke-width="2.6"/></g></g>
+</g>
+
+<!-- TECHNICIAN VAN: drives across the whole hero -->
+<g transform="translate(0,636)"><g class="van">
+<rect x="-46" y="-36" width="80" height="38" rx="9" fill="#fff" stroke="#123B5D" stroke-width="2.5"/><path d="M34 -28h14q8 0 11 8l3 12v10H34z" fill="#123B5D"/><path d="M40 -22h8q4 0 6 5l2 6H40z" fill="#EAF4F8"/>
+<rect x="-46" y="-12" width="80" height="6" fill="#2A9D8F"/><path d="M-26 -22l9-9" stroke="#123B5D" stroke-width="4" stroke-linecap="round"/><circle cx="-14" cy="-30" r="5" fill="none" stroke="#123B5D" stroke-width="3"/>
+<g fill="#123B5D"><circle cx="-24" cy="4" r="9"/><circle cx="40" cy="4" r="9"/></g><g fill="#fff"><circle cx="-24" cy="4" r="3.5"/><circle cx="40" cy="4" r="3.5"/></g></g></g>
+</svg>
+
+        </div>
+
+    </div><!-- /hm-bg -->
+
+    <div class="container">
+
+        <div class="row align-items-center hero-row">
+
+
+            <!-- HERO TEXT -->
+
+            <div class="col-lg-6">
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+
+                        <i class="bi bi-stars" aria-hidden="true"></i>
+
+                        Smarter Home Maintenance
+
+                    </span>
+
+
+                    <h1>
+
+                        Your Home.
+                        <span>Understood.</span>
+                        <br>
+                        Always Maintained.
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        HOMEmind helps you manage your home devices,
+                        understand problems with AI, connect with trusted
+                        technicians, and keep every maintenance record
+                        in one smart platform.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="login.html"
+                            class="btn-primary-custom hero-btn">
+
+                            Get Started
+
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#how-it-works"
+                            class="btn-outline-custom hero-btn">
+
+                            <i class="bi bi-play-circle" aria-hidden="true"></i>
+
+                            See How It Works
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-trust">
+
+                        <div class="trust-item">
+
+                            <i class="bi bi-shield-check" aria-hidden="true"></i>
+
+                            <span>Trusted Service</span>
+
+                        </div>
+
+
+                        <div class="trust-item">
+
+                            <i class="bi bi-stars" aria-hidden="true"></i>
+
+                            <span>AI-Powered</span>
+
+                        </div>
+
+
+                        <div class="trust-item">
+
+                            <i class="bi bi-clock-history" aria-hidden="true"></i>
+
+                            <span>Always Organized</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="stats-wrapper">
+
+            <div class="stat-item">
+
+                <strong>500+</strong>
+
+                <span>Devices Managed</span>
+
+            </div>
+
+
+            <div class="stat-divider"></div>
+
+
+            <div class="stat-item">
+
+                <strong>1,200+</strong>
+
+                <span>Services Completed</span>
+
+            </div>
+
+
+            <div class="stat-divider"></div>
+
+
+            <div class="stat-item">
+
+                <strong>150+</strong>
+
+                <span>Verified Technicians</span>
+
+            </div>
+
+
+            <div class="stat-divider"></div>
+
+
+            <div class="stat-item">
+
+                <strong>95%</strong>
+
+                <span>Customer Satisfaction</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY HOMEmind
+===================================================== -->
+
+<section id="about" class="why-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-label">
+                WHY HOMEmind
+            </span>
+
+            <h2>
+                Everything Your Home Needs,
+                <span>In One Place.</span>
+            </h2>
+
+            <p>
+                Stop losing track of warranties, maintenance dates,
+                repair costs, and service records.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4 mt-4">
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-cpu" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        Smart Device Management
+                    </h3>
+
+                    <p>
+                        Keep all your home equipment,
+                        details, warranties, and maintenance
+                        information organized.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-stars" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        AI Troubleshooting
+                    </h3>
+
+                    <p>
+                        Understand common device problems
+                        before deciding whether you need
+                        professional service.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-person-check" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        Trusted Technicians
+                    </h3>
+
+                    <p>
+                        Connect with verified technicians
+                        based on your service needs and
+                        equipment type.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        Complete History
+                    </h3>
+
+                    <p>
+                        Track repairs, maintenance costs,
+                        service records, and equipment
+                        performance over time.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section id="services" class="services-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                OUR SERVICES
+            </span>
+
+            <h2>
+                One Platform.
+                <span>Complete Control.</span>
+            </h2>
+
+            <p>
+                HOMEmind brings every important part of home
+                equipment management together.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4 mt-4">
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        01
+                    </div>
+
+                    <div class="service-icon">
+                        <i class="bi bi-cpu-fill" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        Device Management
+                    </h3>
+
+                    <p>
+                        Store equipment details, purchase dates,
+                        manufacturers, locations, and warranties.
+                    </p>
+
+                    <a href="login.html">
+                        Manage Devices
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        02
+                    </div>
+
+                    <div class="service-icon">
+                        <i class="bi bi-stars" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        AI Troubleshooting
+                    </h3>
+
+                    <p>
+                        Get intelligent guidance about possible
+                        equipment problems before requesting service.
+                    </p>
+
+                    <a href="login.html">
+                        Explore AI
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        03
+                    </div>
+
+                    <div class="service-icon">
+                        <i class="bi bi-tools" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        Technician Services
+                    </h3>
+
+                    <p>
+                        Request professional maintenance and
+                        connect with trusted technicians.
+                    </p>
+
+                    <a href="login.html">
+                        Request Service
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        04
+                    </div>
+
+                    <div class="service-icon">
+                        <i class="bi bi-clock-history" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        Maintenance History
+                    </h3>
+
+                    <p>
+                        Keep a complete record of previous services,
+                        repairs, costs, and technician visits.
+                    </p>
+
+                    <a href="login.html">
+                        View History
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 5 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        05
+                    </div>
+
+                    <div class="service-icon">
+                        <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        Warranty Management
+                    </h3>
+
+                    <p>
+                        Keep track of warranty periods and avoid
+                        missing important coverage deadlines.
+                    </p>
+
+                    <a href="login.html">
+                        Manage Warranty
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 6 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        06
+                    </div>
+
+                    <div class="service-icon">
+                        <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>
+                        Repair vs Replace
+                    </h3>
+
+                    <p>
+                        Compare repair costs with replacement value
+                        to make smarter equipment decisions.
+                    </p>
+
+                    <a href="login.html">
+                        Make Better Decisions
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section id="how-it-works" class="how-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-label">
+                HOW IT WORKS
+            </span>
+
+            <h2>
+                From Problem to Solution
+                <span>In Four Steps.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="steps-wrapper">
+
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <div class="step-icon">
+                    <i class="bi bi-plus-circle" aria-hidden="true"></i>
+                </div>
+
+                <h3>
+                    Add Your Devices
+                </h3>
+
+                <p>
+                    Add your home equipment and keep
+                    all important details in one place.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <div class="step-icon">
+                    <i class="bi bi-stars" aria-hidden="true"></i>
+                </div>
+
+                <h3>
+                    Understand the Problem
+                </h3>
+
+                <p>
+                    Use AI assistance to understand
+                    possible equipment issues.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <div class="step-icon">
+                    <i class="bi bi-person-check" aria-hidden="true"></i>
+                </div>
+
+                <h3>
+                    Connect With a Technician
+                </h3>
+
+                <p>
+                    Request service and connect with
+                    a suitable verified technician.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <div class="step-icon">
+                    <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                </div>
+
+                <h3>
+                    Keep Your History
+                </h3>
+
+                <p>
+                    Every completed service becomes
+                    part of your equipment history.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHO IS HOMEmind FOR?
+===================================================== -->
+
+<section class="audience-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-label">
+                BUILT FOR EVERYONE
+            </span>
+
+            <h2>
+                One Platform,
+                <span>Three Experiences.</span>
+            </h2>
+
+        </div>
+        <div class="row g-4 mt-4">
+
+
+            <div class="col-lg-4">
+
+                <div class="audience-card">
+
+                    <div class="audience-icon">
+                        <i class="bi bi-house-heart" aria-hidden="true"></i>
+                    </div>
+
+                    <span class="audience-label">
+                        FOR HOMEOWNERS
+                    </span>
+
+                    <h3>
+                        Manage Your Home Smarter
+                    </h3>
+
+                    <p>
+                        Keep your devices, maintenance records,
+                        warranties, and service requests organized
+                        from one dashboard.
+                    </p>
+
+                    <a href="login.html">
+                        Get Started
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="audience-card">
+
+                    <div class="audience-icon">
+                        <i class="bi bi-tools" aria-hidden="true"></i>
+                    </div>
+
+                    <span class="audience-label">
+                        FOR TECHNICIANS
+                    </span>
+
+                    <h3>
+                        Grow Your Service Business
+                    </h3>
+
+                    <p>
+                        Receive service requests, manage jobs,
+                        communicate with customers, and track
+                        completed services.
+                    </p>
+
+                    <a href="login.html?signup=true&type=technician">
+                        Join as Technician
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="audience-card">
+
+                    <div class="audience-icon">
+                        <i class="bi bi-building" aria-hidden="true"></i>
+                    </div>
+
+                    <span class="audience-label">
+                        FOR ORGANIZATIONS
+                    </span>
+
+                    <h3>
+                        Manage Equipment at Scale
+                    </h3>
+
+                    <p>
+                        Monitor multiple properties, devices,
+                        maintenance activities, technicians,
+                        and operational costs.
+                    </p>
+
+                    <a href="company-plans.html">
+                        Explore Business
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     COMMISSION MODEL
+===================================================== -->
+
+<section class="commission-section">
+
+    <div class="container">
+
+        <div class="commission-wrapper">
+
+            <div class="commission-content">
+
+                <span class="section-label">
+                    FAIR & TRANSPARENT
+                </span>
+
+                <h2>
+                    A Simple Model That
+                    <span>Works for Everyone.</span>
+                </h2>
+
+                <p>
+                    HOMEmind connects customers with technicians
+                    while keeping the service pricing transparent.
+                    HOMEmind earns a transparent 10% commission on each
+                    completed technician service. When the customer pays
+                    through HOMEmind, the commission is deducted automatically.
+                    If payment is handled outside the platform, the commission
+                    remains recorded as due until settled.
+                </p>
+
+            </div>
+
+
+            <div class="commission-example">
+
+                <div class="commission-row">
+
+                    <span>
+                        Service Price
+                    </span>
+
+                    <strong>
+                        50 JOD
+                    </strong>
+
+                </div>
+
+
+                <div class="commission-row">
+
+                    <span>
+                        HOMEmind Commission
+                    </span>
+
+                    <strong>
+                        5 JOD
+                    </strong>
+
+                </div>
+
+
+                <div class="commission-row technician-share">
+
+                    <span>
+                        Technician Receives
+                    </span>
+
+                    <strong>
+                        45 JOD
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="commission-payment-note">
+                Example: on a 50 JOD completed service, HOMEmind's 10% share is 5 JOD.
+                Online payments will deduct this automatically; for off-platform payments,
+                the commission is tracked as due. <a href="technician-commission-policy.html">Read the Technician Commission Policy</a>.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-content">
+
+            <div class="cta-icon">
+
+                <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+
+            </div>
+
+            <h2>
+                Give Your Home
+                <span>a Smarter Mind.</span>
+            </h2>
+
+            <p>
+                Start managing your devices, maintenance,
+                and services with HOMEmind.
+            </p>
+
+            <a
+                href="login.html"
+                class="btn-primary-custom cta-btn">
+
+                Get Started
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="contact" class="home-footer">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+
+            <div class="col-lg-4">
+
+                <a href="home.html" class="home-logo footer-logo">
+
+                    <div class="logo-icon">
+                        <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+                    </div>
+
+                    <span class="logo-text">
+                        HOME<span>mind</span>
+                    </span>
+
+                </a>
+
+                <p class="footer-description">
+
+                    A smarter way to manage your home devices,
+                    maintenance, warranties, and professional
+                    services.
+
+                </p>
+
+            </div>
+
+
+            <!-- PLATFORM -->
+
+            <div class="col-6 col-lg-2">
+
+                <h4>
+                    Platform
+                </h4>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="#how-it-works">
+                    How It Works
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+            </div>
+
+
+            <!-- FOR USERS -->
+
+            <div class="col-6 col-lg-2">
+
+                <h4>
+                    For Users
+                </h4>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="login.html">
+                    Get Started
+                </a>
+
+                <a href="login.html?signup=true&type=technician">
+                    Technicians
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="col-lg-4">
+
+                <h4>
+                    Contact
+                </h4>
+
+                <p class="footer-contact">
+                    <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                    Amman, Jordan
+                </p>
+
+                <p class="footer-contact">
+                    <i class="bi bi-envelope" aria-hidden="true"></i>
+                    hello@homemind.com
+                </p>
+
+                <div class="social-links">
+
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="bi bi-facebook" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 HOMEmind. All rights reserved.
+            </p>
+
+            <p class="footer-policy-links">
+                <a href="company-plans.html">Company Plans</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="technician-commission-policy.html">Technician Commission Policy</a>
+                <a href="company-subscription-policy.html">Company Subscription Policy</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS
+     Used by Bootstrap for the mobile navbar.
+-->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="../js/home.js"></script>
+
+</body>
+
+</html>

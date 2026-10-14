@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Warranty Center | HOMEmind</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123B5D'/%3E%3Cpath d='M16 7 6.5 15H9v9h14v-9h2.5z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-2.6-1.8-3.9-3-3.9-4.5 0-1.1.8-1.9 1.8-1.9.8 0 1.6.4 2.1 1.1.5-.7 1.3-1.1 2.1-1.1 1 0 1.8.8 1.8 1.9 0 1.5-1.3 2.7-3.9 4.5z' fill='%232A9D8F'/%3E%3C/svg%3E">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/management/warranty.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <a href="../dashboard.html" class="sidebar-logo">
+            <span class="logo-icon">
+                <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+            </span>
+
+            <span class="logo-text">
+                HOME<span>mind</span>
+            </span>
+        </a>
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-section-title">MAIN</p>
+
+            <a href="../dashboard.html" class="sidebar-link">
+                <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../my-devices.html" class="sidebar-link">
+                <i class="bi bi-cpu" aria-hidden="true"></i>
+                <span>My Devices</span>
+            </a>
+
+            <a href="../services-history.html" class="sidebar-link">
+                <i class="bi bi-tools" aria-hidden="true"></i>
+                <span>Services & History</span>
+            </a>
+            <a href="../my-technicians.html" class="sidebar-link">
+                <i class="bi bi-person-badge" aria-hidden="true"></i>
+                <span>My Technicians</span>
+            </a>
+
+            <a href="../ai-assistant.html" class="sidebar-link">
+                <i class="bi bi-stars" aria-hidden="true"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="../live-dispatch.html" class="sidebar-link">
+                <i class="bi bi-broadcast-pin" aria-hidden="true"></i>
+                <span>Live Service Dispatch</span>
+            </a>
+
+            <a href="../notifications.html" class="sidebar-link">
+                <i class="bi bi-bell" aria-hidden="true"></i>
+                <span>Notifications</span>
+                <span class="notification-badge">3</span>
+            </a>
+
+            <p class="nav-section-title">MANAGEMENT</p>
+
+            <a href="../management/maintenance-history.html" class="sidebar-link">
+                <i class="bi bi-clock-history" aria-hidden="true"></i>
+                <span>Maintenance History</span>
+            </a>
+
+            <a href="../management/warranty.html" class="sidebar-link active">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+                <span>Warranty Center</span>
+            </a>
+
+            <a href="../management/repair-replace.html" class="sidebar-link">
+                <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+                <span>Repair vs Replace</span>
+            </a>
+
+            <p class="nav-section-title">ACCOUNT</p>
+
+            <a href="../profile.html" class="sidebar-link">
+                <i class="bi bi-person" aria-hidden="true"></i>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+                <div class="help-icon">
+                    <i class="bi bi-headset" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>Our support team is here.</span>
+                </div>
+            </div>
+
+            <a href="../home.html" class="logout-link">
+                <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div>
+                <p class="page-label">DEVICE PROTECTION</p>
+
+                <h1>Warranty Center</h1>
+
+                <p>
+                    Keep track of your device warranties and never miss important coverage dates.
+                </p>
+            </div>
+
+            <a href="../live-dispatch.html" class="btn-primary-custom">
+                <i class="bi bi-tools" aria-hidden="true"></i>
+                Request Service
+            </a>
+
+        </div>
+
+
+        <!-- ================= SUMMARY ================= -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+                    <i class="bi bi-shield-check" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Total Warranties</span>
+                    <strong>8</strong>
+                    <small>Registered devices</small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon green">
+                    <i class="bi bi-check-circle" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Active Coverage</span>
+                    <strong>6</strong>
+                    <small>Currently protected</small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon amber">
+                    <i class="bi bi-exclamation-circle" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Expiring Soon</span>
+                    <strong>1</strong>
+                    <small>Within 30 days</small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon red">
+                    <i class="bi bi-shield-x" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>Expired</span>
+                    <strong>1</strong>
+                    <small>Needs attention</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WARRANTY LIST ================= -->
+
+        <section class="warranty-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Your Device Warranties</h2>
+
+                    <p>
+                        Review your current warranty coverage and expiration dates.
+                    </p>
+                </div>
+
+                <span class="coverage-note">
+                    <i class="bi bi-info-circle" aria-hidden="true"></i>
+                    Coverage updates automatically
+                </span>
+
+            </div>
+
+
+            <div class="warranty-grid">
+
+
+                <!-- AIR CONDITIONER -->
+
+                <article class="warranty-card">
+
+                    <div class="warranty-card-top">
+
+                        <div class="device-icon ac-icon">
+                            <i class="bi bi-snow" aria-hidden="true"></i>
+                        </div>
+
+                        <span class="status-badge active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="device-info">
+
+                        <h3>Air Conditioner</h3>
+
+                        <p>
+                            Samsung · Living Room
+                        </p>
+
+                    </div>
+
+
+                    <div class="warranty-details">
+
+                        <div class="detail-row">
+                            <span>Warranty Provider</span>
+                            <strong>Samsung</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Purchase Date</span>
+                            <strong>Jan 15, 2026</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Warranty Ends</span>
+                            <strong>Jun 15, 2027</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-area">
+
+                        <div class="progress-label">
+                            <span>Coverage Remaining</span>
+                            <strong>8 months</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 68%;"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <a href="../device-details.html" class="details-link">
+                            View Device
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="../live-dispatch.html" class="service-link">
+                            Request Service
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- REFRIGERATOR -->
+
+                <article class="warranty-card warning-card">
+
+                    <div class="warranty-card-top">
+
+                        <div class="device-icon refrigerator-icon">
+                            <i class="bi bi-box-seam" aria-hidden="true"></i>
+                        </div>
+
+                        <span class="status-badge expiring">
+                            Expiring Soon
+                        </span>
+
+                    </div>
+
+
+                    <div class="device-info">
+
+                        <h3>Refrigerator</h3>
+
+                        <p>
+                            LG · Kitchen
+                        </p>
+
+                    </div>
+
+
+                    <div class="warranty-details">
+
+                        <div class="detail-row">
+                            <span>Warranty Provider</span>
+                            <strong>LG Electronics</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Purchase Date</span>
+                            <strong>Oct 29, 2025</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Warranty Ends</span>
+                            <strong>Oct 29, 2026</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-area">
+
+                        <div class="progress-label">
+                            <span>Coverage Remaining</span>
+                            <strong>23 days</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar warning-progress" style="width: 8%;"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <a href="../device-details.html" class="details-link">
+                            View Device
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="../live-dispatch.html" class="service-link">
+                            Request Service
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- WASHING MACHINE -->
+
+                <article class="warranty-card">
+
+                    <div class="warranty-card-top">
+
+                        <div class="device-icon washing-icon">
+                            <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                        </div>
+
+                        <span class="status-badge active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="device-info">
+
+                        <h3>Washing Machine</h3>
+
+                        <p>
+                            Samsung · Laundry Room
+                        </p>
+
+                    </div>
+
+
+                    <div class="warranty-details">
+
+                        <div class="detail-row">
+                            <span>Warranty Provider</span>
+                            <strong>Samsung</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Purchase Date</span>
+                            <strong>Mar 20, 2026</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Warranty Ends</span>
+                            <strong>Mar 20, 2028</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-area">
+
+                        <div class="progress-label">
+                            <span>Coverage Remaining</span>
+                            <strong>17 months</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 78%;"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <a href="../device-details.html" class="details-link">
+                            View Device
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="../live-dispatch.html" class="service-link">
+                            Request Service
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- WATER HEATER -->
+
+                <article class="warranty-card expired-card">
+
+                    <div class="warranty-card-top">
+
+                        <div class="device-icon heater-icon">
+                            <i class="bi bi-droplet" aria-hidden="true"></i>
+                        </div>
+
+                        <span class="status-badge expired">
+                            Expired
+                        </span>
+
+                    </div>
+
+
+                    <div class="device-info">
+
+                        <h3>Water Heater</h3>
+
+                        <p>
+                            Ariston · Bathroom
+                        </p>
+
+                    </div>
+
+
+                    <div class="warranty-details">
+
+                        <div class="detail-row">
+                            <span>Warranty Provider</span>
+                            <strong>Ariston</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Purchase Date</span>
+                            <strong>Sep 10, 2024</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Warranty Ended</span>
+                            <strong>Sep 10, 2026</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-area">
+
+                        <div class="progress-label">
+                            <span>Coverage Status</span>
+                            <strong>Expired</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar expired-progress" style="width: 100%;"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <a href="../device-details.html" class="details-link">
+                            View Device
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="../live-dispatch.html" class="service-link">
+                            Request Service
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WARRANTY TIPS ================= -->
+
+        <section class="warranty-info">
+
+            <div class="info-icon">
+                <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            </div>
+
+            <div class="info-content">
+
+                <h3>Protect your warranty</h3>
+
+                <p>
+                    Keep purchase receipts, warranty documents, and maintenance records.
+                    Regular maintenance can also help keep your devices in good condition
+                    and make service claims easier.
+                </p>
+
+            </div>
+
+            <a href="../management/maintenance-history.html" class="info-link">
+                View Maintenance History
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="warranty-cta">
+
+            <div>
+                <span>NEED HELP?</span>
+
+                <h2>
+                    Your warranty is there to protect you.
+                </h2>
+
+                <p>
+                    If your device is covered and needs attention,
+                    request professional service through HOMEmind.
+                </p>
+            </div>
+
+            <a href="../live-dispatch.html" class="btn-light-custom">
+                Request Service
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+
+        </section>
+
+    </main>
+
+</div>
+    <script src="../../js/animations.js"></script>
+</body>
+</html>

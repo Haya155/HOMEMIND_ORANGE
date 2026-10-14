@@ -1,0 +1,937 @@
+/* =====================================================
+   TOKENS  (brand colors unchanged)
+===================================================== */
+
+:root {
+    --navy-900: #0B2942;
+    --navy-700: #123B5D;
+    --teal: #2A9D8F;
+    --teal-light: #72D1C4;
+
+    --bg: #F7FAFC;
+    --text: #172033;
+    --border: #E2E8F0;
+    --border-soft: #EEF2F5;
+
+    /* Neutral grays: --muted is darker than the old #94A3B8 (text contrast) */
+    --muted: #64748B;
+    --icon-muted: #94A3B8;
+
+    --blue-soft: #EAF4F8;
+
+    --green: #22C55E;
+    --green-soft: #EAF8EF;
+    --green-text: #15803D;      /* chip text only */
+
+    --amber: #F59E0B;
+    --amber-soft: #FFF4E5;
+    --amber-text: #B45309;      /* chip / warning text only */
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid rgba(42, 157, 143, 0.4);
+    outline-offset: 2px;
+}
+
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    padding: 22px 18px 16px;
+    background: var(--navy-900);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.sidebar-logo {
+    padding: 0 10px 20px;
+}
+
+.sidebar .home-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar .logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: #FFFFFF;
+    color: var(--navy-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.sidebar .logo-text {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.sidebar .logo-text span {
+    color: var(--teal-light);
+}
+
+
+/* ---------- Sidebar nav ---------- */
+
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 4px;
+
+    /* slim, dark scrollbar instead of the default white one */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+}
+
+.nav-title {
+    margin: 14px 10px 8px;
+    color: #7893A7;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.nav-title:first-child {
+    margin-top: 0;
+}
+
+.sidebar-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 12px;
+    margin-bottom: 2px;
+    border-radius: 9px;
+    color: #B8C9D6;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.sidebar-link i {
+    width: 18px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF;
+}
+
+.sidebar-link.active {
+    background: var(--navy-700);
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.sidebar-link.active i {
+    color: var(--teal-light);
+}
+
+.notification-badge {
+    margin-left: auto;
+    min-width: 20px;
+    height: 20px;
+    padding: 2px 6px;
+    border-radius: 20px;
+    background: var(--teal);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/* ---------- Sidebar bottom ---------- */
+
+.sidebar-bottom {
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-help {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-help > i {
+    color: var(--teal-light);
+    font-size: 18px;
+}
+
+.sidebar-help div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-help strong {
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+.sidebar-help span {
+    color: #8EA5B6;
+    font-size: 11px;
+}
+
+.logout-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    color: #B8C9D6;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 9px;
+    transition: 0.2s ease;
+}
+
+.logout-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF;
+}
+
+.logout-link i {
+    font-size: 16px;
+}
+
+/* Short screens (small laptops): give the nav the room instead */
+
+@media (max-height: 820px) {
+    .sidebar-help {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    margin-left: 260px;
+    padding: 32px 40px 50px;
+}
+
+/* Keep content readable on very wide screens */
+
+.main-content > * {
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 28px;
+}
+
+.top-header h1 {
+    margin-bottom: 4px;
+    color: var(--navy-900);
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.top-header h1 span {
+    color: var(--teal);
+}
+
+.welcome-text {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Primary action */
+
+.primary-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 18px;
+    border-radius: 10px;
+    background: var(--navy-700);
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.primary-action:hover {
+    background: var(--navy-900);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(18, 59, 93, 0.2);
+}
+
+.notification-button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: var(--navy-700);
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.notification-button:hover {
+    border-color: var(--teal);
+}
+
+.notification-button span {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+    border-left: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--navy-700);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-info strong {
+    color: var(--text);
+    font-size: 13px;
+}
+
+.user-info span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.user-profile > i {
+    color: var(--icon-muted);
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #FFFFFF;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(18, 59, 93, 0.08);
+}
+
+.stat-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.stat-icon.blue   { background: var(--blue-soft);  color: var(--navy-700); }
+.stat-icon.teal   { background: #E9F7F4;           color: var(--teal); }
+.stat-icon.orange { background: var(--amber-soft); color: var(--amber); }
+.stat-icon.green  { background: var(--green-soft); color: var(--green); }
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-content > span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.stat-content strong {
+    margin: 1px 0;
+    color: var(--navy-700);
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.stat-content small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   DASHBOARD GRID
+===================================================== */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 22px;
+    margin-bottom: 22px;
+}
+
+.dashboard-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: #FFFFFF;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.card-header h2 {
+    margin: 0;
+    color: var(--navy-700);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.view-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.view-link:hover {
+    color: var(--navy-700);
+}
+
+
+/* =====================================================
+   SERVICE LIST
+===================================================== */
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.service-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.service-icon,
+.device-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--blue-soft);
+    color: var(--navy-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.service-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.service-details strong {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.service-details span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Status chips.
+   NOTE: renamed .progress -> .in-progress because Bootstrap already
+   uses .progress (height: 1rem; overflow: hidden) and was clipping the chip. */
+
+.status {
+    flex-shrink: 0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status.completed {
+    background: var(--green-soft);
+    color: var(--green-text);
+}
+
+.status.in-progress {
+    background: var(--amber-soft);
+    color: var(--amber-text);
+}
+
+
+/* =====================================================
+   WARRANTY
+===================================================== */
+
+.warranty-device {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 11px;
+    background: var(--bg);
+    transition: background 0.2s ease;
+}
+
+.warranty-device:hover {
+    background: var(--blue-soft);
+}
+
+.warranty-device .device-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.device-details strong {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.device-details span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.device-details b {
+    color: var(--amber-text);
+}
+
+.warranty-device > i {
+    color: var(--icon-muted);
+    font-size: 12px;
+}
+
+.warranty-progress {
+    margin-top: 20px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+.progress-info span,
+.progress-info strong {
+    font-size: 12px;
+}
+
+.progress-info span {
+    color: var(--muted);
+}
+
+.progress-info strong {
+    color: var(--amber-text);
+}
+
+.progress {
+    height: 6px;
+    background: var(--border);
+    border-radius: 20px;
+}
+
+.progress-bar {
+    background: var(--amber);
+    border-radius: 20px;
+}
+
+.warranty-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 20px;
+    padding: 11px;
+    border: 1px solid #D8E8EE;
+    border-radius: 9px;
+    color: var(--navy-700);
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--blue-soft);
+    transition: 0.2s ease;
+}
+
+.warranty-button:hover {
+    background: var(--navy-700);
+    border-color: var(--navy-700);
+    color: #FFFFFF;
+}
+
+
+/* =====================================================
+   DEVICES
+===================================================== */
+
+.devices-card {
+    margin-bottom: 0;
+}
+
+.devices-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.device-card {
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #FFFFFF;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.device-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--teal);
+    box-shadow: 0 10px 25px rgba(18, 59, 93, 0.08);
+}
+
+.device-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.device-card h3 {
+    margin-bottom: 4px;
+    color: var(--navy-700);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.device-card p {
+    margin-bottom: 16px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.device-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.device-status.active {
+    background: var(--green-soft);
+    color: var(--green-text);
+}
+
+.device-status.maintenance {
+    background: var(--amber-soft);
+    color: var(--amber-text);
+}
+
+.device-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-soft);
+}
+
+.device-footer span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.device-footer strong {
+    color: var(--navy-700);
+    font-size: 12px;
+}
+
+.device-footer strong.warn {
+    color: var(--amber-text);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .main-content {
+        padding: 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        width: calc(100% - 220px);
+        margin-left: 220px;
+    }
+
+    .devices-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .top-header {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar-help {
+        display: none;
+    }
+
+    .dashboard-layout {
+        display: block;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 25px 18px 40px;
+    }
+
+    .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .devices-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-nav {
+        overflow: visible;
+    }
+
+    .sidebar-bottom {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+        padding: 20px;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .primary-action span {
+        display: none;      /* icon-only button on small phones */
+    }
+
+    .primary-action {
+        padding: 0 13px;
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .stat-card:hover,
+    .device-card:hover,
+    .primary-action:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,48 @@
+/* Burger menu for pages with a sidebar. No JavaScript: a hidden checkbox opens the sidebar. */
+.menu-toggle, .menu-burger, .menu-overlay { display: none; }
+
+@media (max-width: 991px) {
+    .menu-burger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 14px;
+        left: 14px;
+        z-index: 40;
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+        color: #0B2942;
+        background: #fff;
+        border: 1px solid #dfe7ef;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(11, 41, 66, 0.15);
+        cursor: pointer;
+    }
+
+    /* The sidebar slides in from the left */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        z-index: 60;
+    }
+    .menu-toggle:checked ~ .sidebar { transform: none; }
+
+    /* Dark layer behind the open sidebar; tapping it closes the menu */
+    .menu-toggle:checked ~ .menu-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background: rgba(11, 41, 66, 0.5);
+    }
+    .menu-toggle:checked ~ .menu-burger { display: none; }
+
+    /* Content uses the full width and leaves room for the burger */
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding-top: 64px !important;
+    }
+}
